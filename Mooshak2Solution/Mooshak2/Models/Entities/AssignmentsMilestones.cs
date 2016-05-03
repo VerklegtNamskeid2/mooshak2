@@ -20,7 +20,7 @@ namespace Mooshak2.Models.Entities
         ///<summary>
         ///A foreign key to the assignment.
         ///</summary>
-        public int AssignmentsID { get; set;
+        public int AssignmentsID { get; set; }
         ///<summary>
         ///The title of the milestone. Example: "Part 1"
         ///</summary>

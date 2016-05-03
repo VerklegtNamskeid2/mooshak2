@@ -20,7 +20,7 @@ namespace Mooshak2.Models
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    
+    {
         public DbSet<Assignments> Assignments { get; set; }
         public DbSet<AssignmentsMilestones> Milestones { get; set; }
 

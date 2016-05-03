@@ -16,9 +16,9 @@ namespace Mooshak2.Controllers
             return View();
         }
 
-        public ActionResult Details(int id);
+        public ActionResult Details(int id)
         {
-            var viewModels = _service.GetAssignmetsByID(id);
+            var viewModels = _service.GetAssignmentsByID(id);
             return View(viewModels);
         }
     }
