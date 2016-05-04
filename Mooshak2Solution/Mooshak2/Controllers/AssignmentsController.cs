@@ -10,7 +10,7 @@ namespace Mooshak2.Controllers
     public class AssignmentsController : Controller
     {
         private AssignmentsServices _service = new AssignmentsServices();
-        // GET: Assignments
+        // GET: Assignme
         public ActionResult Index()
         {
             return View();
