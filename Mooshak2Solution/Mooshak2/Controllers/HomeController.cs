@@ -46,7 +46,7 @@ namespace Mooshak2.Controllers
                 //var myRoles = manager.GetUserRoles(id);
             }
 
-            return null;
+            return RedirectToAction("Index");
         }
         
         public ActionResult About()
