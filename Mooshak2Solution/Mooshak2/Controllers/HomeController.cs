@@ -23,7 +23,7 @@ namespace Mooshak2.Controllers
             {
                 manager.CreateRole("Administrators");
             }
-            if (manager.UserExsists("Admin@admin.com"))
+            if (manager.UserExsists("admin@admin.com"))
             {
                 ApplicationUser newAdmin = new ApplicationUser();
                 newAdmin.UserName = "admin@admin.com";
