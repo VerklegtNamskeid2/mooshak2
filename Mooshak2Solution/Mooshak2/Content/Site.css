@@ -1,13 +1,17 @@
 ﻿body {
+    margin-left: 5vw;
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: #4747d1;
+    background-color: #FFFFFF;
+    height: 100vh;
+    width: 80vw;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -24,14 +28,61 @@ textarea {
     max-width: 280px;
 }
 
+.our-navbar {
+    background-color: rgba(1, 50, 45, 1) !important;
+}
+
 h1 {
-    color: #D6D6D6;
+    color: #015249;
 }
 
 .login-box {
-    border: 2px solid #999999 !important;
     margin-top: 15vh;
-    background-color: #f2f2f2;
-    margin-left: 25vw !important;
-    margin-right: 25vw !important;
+    margin-left: 30vw !important;
+    margin-right: 30vw !important;
+    margin-bottom: 25vh;
+    padding-top: 2vh;
+    padding-bottom: 4vh;
+    padding-left: 2vw;
+    border: 2px solid #999999 !important;
+    background-color: rgba(165, 175, 165, 0.1);
+}
+
+.control-label {
+    color: rgb(1, 82, 73);
+    font-size: 14px;
+}
+
+.button-loginform {
+    letter-spacing: 0;
+    border-radius: 0;
+    display: inline-block;
+    background-color: rgba(1, 82, 73, 0.7);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 10px;
+    width: 10vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button-loginform:hover, .button-loginform:active {
+    color: #FFFFFF;
+    background-color: rgba(1, 82, 73, 1);
+}
+
+
+@media screen and (max-width: 1025px) {
+    .button-loginform {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .button-loginform {
+        font-size: 14px;
+    }
 }
