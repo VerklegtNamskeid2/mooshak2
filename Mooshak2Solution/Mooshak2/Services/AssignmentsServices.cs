@@ -23,7 +23,7 @@ namespace Mooshak2.Services
         public AssignmentsViewModels GetAssignmentsByID(int assignmentsID)
         {
             var assignments = _db.Assignments.SingleOrDefault(x => x.ID == assignmentsID);
-           if (assignments == null)
+            if (assignments == null)
             {
                 //TODO: kastavillu!
             }
@@ -37,10 +37,15 @@ namespace Mooshak2.Services
                 .ToList();
 
             var viewModel = new AssignmentsViewModels
-           {
-                Title = assignments.Title
-           };
+            {
+                Title = assignments.Title,
+                Milestones = milestones
+            };
             return viewModel;
+        }
+        public void Add(Assignment newAssignment)
+        {
+            
         }
     }
 }

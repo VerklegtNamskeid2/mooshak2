@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Mooshak2.Models;
+using Mooshak2.Models.Entities;
 
 namespace Mooshak2.Controllers
 {
@@ -75,7 +76,7 @@ namespace Mooshak2.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: true);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -151,7 +152,7 @@ namespace Mooshak2.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new Models.ApplicationUser { UserName = model.Email, Email = model.Email, FullName = model.FullName };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -367,7 +368,7 @@ namespace Mooshak2.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new Models.ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
@@ -422,6 +423,30 @@ namespace Mooshak2.Controllers
 
             base.Dispose(disposing);
         }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public ActionResult Create()
+        {
+            Models.Entities.MooshakUser model = new Models.Entities.MooshakUser();
+            return View(model);
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult Create(FormCollection coll)
+        {
+            Models.Entities.MooshakUser user = new Models.Entities.MooshakUser();
+
+            UpdateModel(user);
+
+
+            //TODO setja í service
+
+            return RedirectToAction("Index");
+
+        }
+
 
         #region Helpers
         // Used for XSRF protection when adding external logins

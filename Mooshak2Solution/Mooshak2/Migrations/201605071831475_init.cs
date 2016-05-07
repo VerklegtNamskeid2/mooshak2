@@ -3,19 +3,47 @@ namespace Mooshak2.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Init : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
-           
+            CreateTable(
+                "dbo.MooshakUsers",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
-                "dbo.AssignmentsMilestones",
+                "dbo.Assignments",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        CoursesID = c.Int(nullable: false),
+                        Title = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.Courses",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        DateCreated = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.AssignmentMilestones",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
                         AssignmentsID = c.Int(nullable: false),
                         Title = c.String(),
+                        weight = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
             
@@ -106,7 +134,10 @@ namespace Mooshak2.Migrations
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
-            DropTable("dbo.AssignmentsMilestones");
+            DropTable("dbo.AssignmentMilestones");
+            DropTable("dbo.Courses");
+            DropTable("dbo.Assignments");
+            DropTable("dbo.MooshakUsers");
         }
     }
 }

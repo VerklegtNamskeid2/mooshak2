@@ -79,6 +79,9 @@ namespace Mooshak2.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        public string FullName { get; set; }
+        public string SSN { get; set; }
     }
 
     public class ResetPasswordViewModel

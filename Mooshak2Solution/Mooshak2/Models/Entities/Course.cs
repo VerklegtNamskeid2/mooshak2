@@ -5,10 +5,10 @@ using System.Web;
 
 namespace Mooshak2.Models.Entities
 {
-    public class Assignments
+    public class Course
     {
         public int ID { get; set; }
-        public int CoursesID { get; set; }
-        public int Title { get; set; }
+        public string Name { get; set; }
+        public DateTime DateCreated { get; set; } 
     }
 }
