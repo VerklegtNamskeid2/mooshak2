@@ -38,5 +38,7 @@ namespace Mooshak2.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Mooshak2.Models.Entities.UsersCourse> UsersCourses { get; set; }
     }
 }

@@ -424,28 +424,7 @@ namespace Mooshak2.Controllers
             base.Dispose(disposing);
         }
 
-        [AllowAnonymous]
-        [HttpGet]
-        public ActionResult Create()
-        {
-            Models.Entities.MooshakUser model = new Models.Entities.MooshakUser();
-            return View(model);
-        }
-
-        [AllowAnonymous]
-        [HttpPost]
-        public ActionResult Create(FormCollection coll)
-        {
-            Models.Entities.MooshakUser user = new Models.Entities.MooshakUser();
-
-            UpdateModel(user);
-
-
-            //TODO setja í service
-
-            return RedirectToAction("Index");
-
-        }
+       
 
 
         #region Helpers

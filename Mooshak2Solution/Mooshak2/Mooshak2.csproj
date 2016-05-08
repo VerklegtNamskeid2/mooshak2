@@ -197,8 +197,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AssignmentsController.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UsersCoursesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -210,12 +212,25 @@
     <Compile Include="Migrations\201605071839052_addname.Designer.cs">
       <DependentUpon>201605071839052_addname.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605072055132_ConnectToCourse.cs" />
+    <Compile Include="Migrations\201605072055132_ConnectToCourse.Designer.cs">
+      <DependentUpon>201605072055132_ConnectToCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605072141180_tryingForeignKeys.cs" />
+    <Compile Include="Migrations\201605072141180_tryingForeignKeys.Designer.cs">
+      <DependentUpon>201605072141180_tryingForeignKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605081146108_test1.cs" />
+    <Compile Include="Migrations\201605081146108_test1.Designer.cs">
+      <DependentUpon>201605081146108_test1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entities\Assignment.cs" />
     <Compile Include="Models\Entities\AssignmentMilestone.cs" />
     <Compile Include="Models\Entities\Course.cs" />
     <Compile Include="Models\Entities\MooshakUser.cs" />
+    <Compile Include="Models\Entities\UsersCourse.cs" />
     <Compile Include="Models\IdentityManager.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -288,7 +303,16 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Assignments\Details.cshtml" />
-    <Content Include="Views\Account\Create.cshtml" />
+    <Content Include="Views\Courses\Create.cshtml" />
+    <Content Include="Views\Courses\Delete.cshtml" />
+    <Content Include="Views\Courses\Details.cshtml" />
+    <Content Include="Views\Courses\Edit.cshtml" />
+    <Content Include="Views\Courses\Index.cshtml" />
+    <Content Include="Views\UsersCourses\Create.cshtml" />
+    <Content Include="Views\UsersCourses\Delete.cshtml" />
+    <Content Include="Views\UsersCourses\Details.cshtml" />
+    <Content Include="Views\UsersCourses\Edit.cshtml" />
+    <Content Include="Views\UsersCourses\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -310,6 +334,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605071839052_addname.resx">
       <DependentUpon>201605071839052_addname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605072055132_ConnectToCourse.resx">
+      <DependentUpon>201605072055132_ConnectToCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605072141180_tryingForeignKeys.resx">
+      <DependentUpon>201605072141180_tryingForeignKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605081146108_test1.resx">
+      <DependentUpon>201605081146108_test1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
