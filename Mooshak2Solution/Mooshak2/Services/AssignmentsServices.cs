@@ -55,9 +55,28 @@ namespace Mooshak2.Services
             return viewModel;
         }
 
-        public CoursesViewModels GetCoursesByID (int courseID)
+        public CoursesViewModels GetCoursesByID (int coursesID)
         {
-            return null;
+            var courses = _db.Courses.SingleOrDefault(x => x.ID == coursesID);
+            if (courses == null)
+            {
+                //TODO: kastavillu!
+            }
+
+            var assignment = _db.Assignments
+                .Where(x => x.CourseID == coursesID)
+                .Select(x => new CoursesViewModels
+                {
+                    Title = x.Title
+                })
+                .ToList();
+
+            var viewModel = new CoursesViewModels
+            {
+                Title = courses.Title,
+               // Assignments = assignment
+            };
+            return viewModel;
         }
 
         public MooshakUserViewModel MooshakUserByID (int UserID)
