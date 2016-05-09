@@ -219,6 +219,9 @@
     <Compile Include="Migrations\201605101452250_TitleToInt.cs" />
     <Compile Include="Migrations\201605101452250_TitleToInt.Designer.cs">
       <DependentUpon>201605101452250_TitleToInt.cs</DependentUpon>
+    <Compile Include="Migrations\201605091610578_Initial.cs" />
+    <Compile Include="Migrations\201605091610578_Initial.Designer.cs">
+      <DependentUpon>201605091610578_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -326,6 +329,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< f2bc2c60415da2f117e16843f70c719e7c51bb74
     <EmbeddedResource Include="Migrations\201605101335220_initalDatabaseSetup.resx">
       <DependentUpon>201605101335220_initalDatabaseSetup.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,6 +341,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605101452250_TitleToInt.resx">
       <DependentUpon>201605101452250_TitleToInt.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Migrations\201605091610578_Initial.resx">
+      <DependentUpon>201605091610578_Initial.cs</DependentUpon>
+>>>>>>> connectForeignKeyForApplicationUser
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

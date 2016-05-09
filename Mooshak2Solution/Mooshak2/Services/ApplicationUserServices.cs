@@ -18,7 +18,7 @@ namespace Mooshak2.Services
 
         public void AddUser(ApplicationUser newUser)
         {
-            _db.ApplicationUsers.Add(newUser);
+            _db.Users.Add(newUser);
 
         }
     }

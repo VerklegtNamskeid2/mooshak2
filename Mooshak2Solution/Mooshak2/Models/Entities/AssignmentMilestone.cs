@@ -22,9 +22,9 @@ namespace Mooshak2.Models.Entities
         ///A foreign key to the assignment.
         ///</summary>
         
-        [ForeignKey("AssignmentID")]
+        [ForeignKey("Assignments")]
         public int AssignmentID { get; set; }
-        public Assignment Assignments { get; set; }
+        public virtual Assignment Assignments { get; set; }
 
 
 

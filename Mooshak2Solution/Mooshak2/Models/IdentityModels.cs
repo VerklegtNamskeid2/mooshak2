@@ -27,7 +27,7 @@ namespace Mooshak2.Models
         public DbSet<Assignment>                            Assignments         { get; set; }
         public DbSet<AssignmentMilestone>                   Milestones          { get; set; }
         public DbSet<Course>                                Courses             { get; set; }
-        public DbSet<ApplicationUser>                       ApplicationUsers    { get; set; }
+        public DbSet<UsersCourse>                           UsersCourses        { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -39,6 +39,5 @@ namespace Mooshak2.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Mooshak2.Models.Entities.UsersCourse> UsersCourses { get; set; }
     }
 }
