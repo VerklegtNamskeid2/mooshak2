@@ -14,14 +14,23 @@ namespace Mooshak2.Services
         public AssignmentsServices()
         {
             _db = new ApplicationDbContext();
-        } 
+        }
         public List<AssignmentsViewModels> GetAssignmentsInCourse(int courseID)
         {
-            
-            
-            //TODO:
+
             return null;
         }
+
+        public List<MooshakUserViewModel> GetMooshakUsersByCourse(int userID)
+        {
+            return null;
+        }
+
+        public List<AssignmentsMilestonesViewModels> GetAssignmentsMilestonesByAssignment(int AssignmentID)
+        {
+            return null;
+        }
+
         public AssignmentsViewModels GetAssignmentsByID(int assignmentsID)
         {
             var assignments = _db.Assignments.SingleOrDefault(x => x.ID == assignmentsID);
@@ -45,9 +54,17 @@ namespace Mooshak2.Services
             };
             return viewModel;
         }
-        public void Add(Assignment newAssignment)
+
+        public CoursesViewModels GetCoursesByID (int courseID)
         {
-            
+            return null;
         }
+
+        public MooshakUserViewModel MooshakUserByID (int UserID)
+        {
+            return null;
+        } 
+
+
     }
 }
