@@ -208,6 +208,10 @@
     <Compile Include="Migrations\201605091610578_Initial.Designer.cs">
       <DependentUpon>201605091610578_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605091905346_newAssignmentController.cs" />
+    <Compile Include="Migrations\201605091905346_newAssignmentController.Designer.cs">
+      <DependentUpon>201605091905346_newAssignmentController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entities\Assignment.cs" />
@@ -297,6 +301,10 @@
     <Content Include="Views\UsersCourses\Details.cshtml" />
     <Content Include="Views\UsersCourses\Edit.cshtml" />
     <Content Include="Views\UsersCourses\Index.cshtml" />
+    <Content Include="Views\Assignments\Create.cshtml" />
+    <Content Include="Views\Assignments\Delete.cshtml" />
+    <Content Include="Views\Assignments\Edit.cshtml" />
+    <Content Include="Views\Assignments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -315,6 +323,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605091610578_Initial.resx">
       <DependentUpon>201605091610578_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605091905346_newAssignmentController.resx">
+      <DependentUpon>201605091905346_newAssignmentController.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

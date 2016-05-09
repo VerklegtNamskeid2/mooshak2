@@ -22,6 +22,11 @@ namespace Mooshak2.Models.Entities
         /// </summary>
         
         public int Title { get; set; }
+        public string Description { get; set; }
+        public DateTime OpeningDate { get; set; }
+        public DateTime ClosingDate { get; set; }
+        public int SubmissionLimit { get; set; }
+
 
         public ICollection<AssignmentMilestone> AssignmentMilestones { get; set; }
     }

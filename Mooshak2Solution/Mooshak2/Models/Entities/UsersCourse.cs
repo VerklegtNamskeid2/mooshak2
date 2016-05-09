@@ -32,7 +32,9 @@ namespace Mooshak2.Models.Entities
         /// public Course Course { get; set; }
         /// </summary>
 
-
+        
         public int RoleID { get; set; }
+
+        
     }
 }
