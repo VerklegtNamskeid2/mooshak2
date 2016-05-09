@@ -71,17 +71,12 @@ namespace Mooshak2.Services
                 })
                 .ToList();
 
-           var viewModel = new CourseViewModels
+            var viewModel = new CoursesViewModels
             {
                 Title = courses.Title,
-                Assignments = assignments
+               // Assignments = assignment
             };
             return viewModel;
-        }
-        
-        public void Add(Assignment newAssignment)
-        {
-            _db.Assignments.Add(newAssignment);   
         }
 
         public MooshakUserViewModel MooshakUserByID (int UserID)

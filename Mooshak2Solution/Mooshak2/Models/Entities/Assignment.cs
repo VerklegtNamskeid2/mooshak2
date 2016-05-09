@@ -21,7 +21,7 @@ namespace Mooshak2.Models.Entities
         /// public Course Course { get; set; }
         /// </summary>
         
-        public int Title { get; set; }
+        public string Title { get; set; }
         public string Description { get; set; }
         public DateTime OpeningDate { get; set; }
         public DateTime ClosingDate { get; set; }
