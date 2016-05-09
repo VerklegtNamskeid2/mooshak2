@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -20,7 +21,13 @@ namespace Mooshak2.Models.Entities
         ///<summary>
         ///A foreign key to the assignment.
         ///</summary>
-        public int AssignmentsID { get; set; }
+        
+        [ForeignKey("AssignmentID")]
+        public int AssignmentID { get; set; }
+        public Assignment Assignments { get; set; }
+
+
+
         ///<summary>
         ///The title of the milestone. Example: "Part 1"
         ///</summary>

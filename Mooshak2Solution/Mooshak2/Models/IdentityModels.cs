@@ -24,10 +24,10 @@ namespace Mooshak2.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Assignment>            Assignments         { get; set; }
-        public DbSet<AssignmentMilestone>   Milestones          { get; set; }
-        public DbSet<Course>                Courses             { get; set; }
-        public DbSet<Entities.MooshakUser>                  ApplicationUsers    { get; set; }
+        public DbSet<Assignment>                            Assignments         { get; set; }
+        public DbSet<AssignmentMilestone>                   Milestones          { get; set; }
+        public DbSet<Course>                                Courses             { get; set; }
+        public DbSet<ApplicationUser>                       ApplicationUsers    { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
