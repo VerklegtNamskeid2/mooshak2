@@ -16,7 +16,7 @@ namespace Mooshak2.Services
             _db = new ApplicationDbContext();
         }
 
-        public void AddUser(Models.Entities.MooshakUser newUser)
+        public void AddUser(ApplicationUser newUser)
         {
             _db.ApplicationUsers.Add(newUser);
 

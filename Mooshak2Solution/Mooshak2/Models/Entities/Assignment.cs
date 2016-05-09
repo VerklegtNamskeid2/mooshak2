@@ -9,14 +9,20 @@ namespace Mooshak2.Models.Entities
     public class Assignment
     {
         public int ID { get; set; }
-        public int CoursesID { get; set; }
+
+        [ForeignKey("CourseID")]
+        public int CourseID { get; set; }
+        public Course Course { get; set; }
+
 
         /// <summary>
         /// Need to connect this foreign key to the right table
         /// Example: [ForeignKey("CoursesID")]
         /// public Course Course { get; set; }
         /// </summary>
-        /// 
+        
         public int Title { get; set; }
+
+        public ICollection<AssignmentMilestone> AssignmentMilestones { get; set; }
     }
 }

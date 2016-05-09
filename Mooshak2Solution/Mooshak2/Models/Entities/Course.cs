@@ -9,6 +9,8 @@ namespace Mooshak2.Models.Entities
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public DateTime DateCreated { get; set; } 
+        public DateTime DateCreated { get; set; }
+
+        public ICollection<Assignment> CourseAssignments { get; set; }
     }
 }

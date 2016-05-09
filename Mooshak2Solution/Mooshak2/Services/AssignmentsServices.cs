@@ -29,7 +29,7 @@ namespace Mooshak2.Services
             }
 
             var milestones = _db.Milestones
-                .Where(x => x.AssignmentsID == assignmentsID)
+                .Where(x => x.AssignmentID == assignmentsID)
                 .Select(x => new AssignmentsMilestonesViewModels
                 {
                     Title = x.Title
