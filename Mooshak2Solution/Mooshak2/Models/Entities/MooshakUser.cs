@@ -5,10 +5,8 @@ using System.Web;
 
 namespace Mooshak2.Models.Entities
 {
-    public class MooshakUser
+    public class MooshakUser : ApplicationUser
     {
         //Munum líklega ekki nota þennan gæja, en ætla að halda honum inni í smá tíma...
-        public int ID { get; set; }
-        public string Name { get; set; }
     }
 }

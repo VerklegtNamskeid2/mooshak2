@@ -10,9 +10,9 @@ namespace Mooshak2.Models.Entities
     {
         public int ID { get; set; }
 
-        [ForeignKey("CourseID")]
+        [ForeignKey("Course")]
         public int CourseID { get; set; }
-        public Course Course { get; set; }
+        public virtual Course Course { get; set; }
 
 
         /// <summary>
