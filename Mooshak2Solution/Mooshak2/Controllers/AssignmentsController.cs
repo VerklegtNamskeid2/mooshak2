@@ -15,12 +15,13 @@ namespace Mooshak2.Controllers
     public class AssignmentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        // private AssignmentsServices _service = new AssignmentsServices();
+        private AssignmentsServices _service = new AssignmentsServices();
         // GET: Assignments
         public ActionResult Index()
         {
             var assignments = db.Assignments.Include(a => a.Course);
             return View(assignments.ToList());
+            
         }
 
         // GET: Assignments/Details/5
