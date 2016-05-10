@@ -3,7 +3,7 @@ namespace Mooshak2.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class inital : DbMigration
     {
         public override void Up()
         {
@@ -13,7 +13,11 @@ namespace Mooshak2.Migrations
                     {
                         ID = c.Int(nullable: false, identity: true),
                         CourseID = c.Int(nullable: false),
-                        Title = c.Int(nullable: false),
+                        Title = c.String(),
+                        Description = c.String(),
+                        OpeningDate = c.DateTime(nullable: false),
+                        ClosingDate = c.DateTime(nullable: false),
+                        SubmissionLimit = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Courses", t => t.CourseID, cascadeDelete: true)
@@ -39,6 +43,7 @@ namespace Mooshak2.Migrations
                         ID = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         DateCreated = c.DateTime(nullable: false),
+                        Title = c.String(),
                     })
                 .PrimaryKey(t => t.ID);
             

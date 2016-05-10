@@ -9,18 +9,19 @@ using System.Web.Mvc;
 using Mooshak2.Models;
 using Mooshak2.Models.Entities;
 using Mooshak2.Services;
+using Mooshak2.Models.ViewModels;
 
 namespace Mooshak2.Controllers
 {
     public class AssignmentsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+       private ApplicationDbContext db = new ApplicationDbContext();
         private AssignmentsServices _service = new AssignmentsServices();
         // GET: Assignments
         public ActionResult Index()
         {
-            var assignments = db.Assignments.Include(a => a.Course);
-            return View(assignments.ToList());
+            //var assignments = _db.Assignments.Include(a => a.Course);
+            return View();
             
         }
 
@@ -31,18 +32,18 @@ namespace Mooshak2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Assignment assignment = db.Assignments.Find(id);
+            /*Assignment assignment = db.Assignments.Find(id);
             if (assignment == null)
             {
                 return HttpNotFound();
-            }
-            return View(assignment);
+            }*/
+            return View();
         }
 
         // GET: Assignments/Create
         public ActionResult Create()
         {
-            ViewBag.CourseID = new SelectList(db.Courses, "ID", "Name");
+            //ViewBag.CourseID = new SelectList(db.Courses, "ID", "Name");
             return View();
         }
 
@@ -50,20 +51,29 @@ namespace Mooshak2.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,CourseID,Title")] Assignment assignment)
+        public ActionResult CreateTest(AssignmentCreateViewModel model)
         {
-            if (ModelState.IsValid)
+            var openinDate = new DateTime(2016, 04, 01);
+            var closeDate = new DateTime(2016, 04, 01);
+            var testObject = new Assignment
             {
-                db.Assignments.Add(assignment);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                Title = model.Title,
+                CourseID = 1,
+                Description = model.Description,
+                OpeningDate = openinDate,
+                ClosingDate = closeDate,
+                SubmissionLimit = 3
+            };
+            _service.Add(testObject);
 
-            ViewBag.CourseID = new SelectList(db.Courses, "ID", "Name", assignment.CourseID);
-            return View(assignment);
+            return View();
         }
 
+        [HttpGet]
+        public ActionResult CreateTest()
+        {
+            return View();
+        }
         // GET: Assignments/Edit/5
         public ActionResult Edit(int? id)
         {
