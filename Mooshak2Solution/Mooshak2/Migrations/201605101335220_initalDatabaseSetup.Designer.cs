@@ -7,13 +7,13 @@ namespace Mooshak2.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addingForeignKey : IMigrationMetadata
+    public sealed partial class initalDatabaseSetup : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addingForeignKey));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initalDatabaseSetup));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605090933054_addingForeignKey"; }
+            get { return "201605101335220_initalDatabaseSetup"; }
         }
         
         string IMigrationMetadata.Source

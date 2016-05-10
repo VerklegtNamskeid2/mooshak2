@@ -43,9 +43,34 @@ namespace Mooshak2.Services
             };
             return viewModel;
         }
+        
+
+        public CourseViewModels GetCoursesByID(int courseID)
+        {
+            var courses = _db.Courses.SingleOrDefault(x => x.ID == courseID);
+            if (courses == null)
+            {
+                //TODO: kastavillu!
+            }
+            var assignments = _db.Assignments
+                .Where(x => x.CoursesID == courseID)
+                .Select(x => new AssignmentsViewModels
+                {
+                    Title = x.Title
+                })
+                .ToList();
+
+           var viewModel = new CourseViewModels
+            {
+                Title = courses.Title,
+                Assignments = assignments
+            };
+            return viewModel;
+        }
+        
         public void Add(Assignment newAssignment)
         {
-            
+            _db.Assignments.Add(newAssignment);   
         }
     }
 }

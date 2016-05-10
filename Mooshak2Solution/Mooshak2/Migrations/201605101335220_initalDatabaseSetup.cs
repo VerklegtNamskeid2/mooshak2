@@ -3,7 +3,7 @@ namespace Mooshak2.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class init : DbMigration
+    public partial class initalDatabaseSetup : DbMigration
     {
         public override void Up()
         {
@@ -75,6 +75,8 @@ namespace Mooshak2.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        SSN = c.String(),
+                        FullName = c.String(),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -115,6 +117,17 @@ namespace Mooshak2.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
+            CreateTable(
+                "dbo.UsersCourses",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        UserID = c.Int(nullable: false),
+                        CourseID = c.Int(nullable: false),
+                        RoleID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
         }
         
         public override void Down()
@@ -129,6 +142,7 @@ namespace Mooshak2.Migrations
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropTable("dbo.UsersCourses");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");

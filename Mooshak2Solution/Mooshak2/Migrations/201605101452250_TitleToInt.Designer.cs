@@ -7,13 +7,13 @@ namespace Mooshak2.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addname : IMigrationMetadata
+    public sealed partial class TitleToInt : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addname));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TitleToInt));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605071839052_addname"; }
+            get { return "201605101452250_TitleToInt"; }
         }
         
         string IMigrationMetadata.Source
