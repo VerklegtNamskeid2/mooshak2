@@ -14,23 +14,12 @@ namespace Mooshak2.Services
         public AssignmentsServices()
         {
             _db = new ApplicationDbContext();
-        }
+        } 
         public List<AssignmentsViewModels> GetAssignmentsInCourse(int courseID)
         {
-
+            //TODO:
             return null;
         }
-
-        public List<MooshakUserViewModel> GetMooshakUsersByCourse(int userID)
-        {
-            return null;
-        }
-
-        public List<AssignmentsMilestonesViewModels> GetAssignmentsMilestonesByAssignment(int AssignmentID)
-        {
-            return null;
-        }
-
         public AssignmentsViewModels GetAssignmentsByID(int assignmentsID)
         {
             var assignments = _db.Assignments.SingleOrDefault(x => x.ID == assignmentsID);
@@ -64,26 +53,33 @@ namespace Mooshak2.Services
                 //TODO: kastavillu!
             }
             var assignments = _db.Assignments
-                .Where(x => x.CoursesID == courseID)
+                .Where(x => x.CourseID == courseID)
                 .Select(x => new AssignmentsViewModels
                 {
                     Title = x.Title
                 })
                 .ToList();
 
-            var viewModel = new CoursesViewModels
+           var viewModel = new CoursesViewModels
             {
                 Title = courses.Title,
-               // Assignments = assignment
+                Assignments = assignments
             };
             return viewModel;
         }
-
-        public MooshakUserViewModel MooshakUserByID (int UserID)
+        
+        public void Add(Assignment newAssignment)
         {
-            return null;
-        } 
+            _db.Assignments.Add(newAssignment);
 
+            try
+            {
+                _db.SaveChanges();  
+            }
+            catch
+            {
 
+            }
+        }
     }
 }

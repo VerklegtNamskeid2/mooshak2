@@ -204,29 +204,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605101335220_initalDatabaseSetup.cs" />
-    <Compile Include="Migrations\201605101335220_initalDatabaseSetup.Designer.cs">
-      <DependentUpon>201605101335220_initalDatabaseSetup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605101406082_TitleFromIntToString.cs" />
-    <Compile Include="Migrations\201605101406082_TitleFromIntToString.Designer.cs">
-      <DependentUpon>201605101406082_TitleFromIntToString.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605101414289_changeTitleToInt.cs" />
-    <Compile Include="Migrations\201605101414289_changeTitleToInt.Designer.cs">
-      <DependentUpon>201605101414289_changeTitleToInt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605101452250_TitleToInt.cs" />
-    <Compile Include="Migrations\201605101452250_TitleToInt.Designer.cs">
-      <DependentUpon>201605101452250_TitleToInt.cs</DependentUpon>
-    <Compile Include="Migrations\201605091610578_Initial.cs" />
-    <Compile Include="Migrations\201605091610578_Initial.Designer.cs">
-      <DependentUpon>201605091610578_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605091905346_newAssignmentController.cs" />
-    <Compile Include="Migrations\201605091905346_newAssignmentController.Designer.cs">
-      <DependentUpon>201605091905346_newAssignmentController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entities\Assignment.cs" />
@@ -322,6 +299,7 @@
     <Content Include="Views\Assignments\Delete.cshtml" />
     <Content Include="Views\Assignments\Edit.cshtml" />
     <Content Include="Views\Assignments\Index.cshtml" />
+    <Content Include="Views\Assignments\CreateTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -338,26 +316,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< f2bc2c60415da2f117e16843f70c719e7c51bb74
-    <EmbeddedResource Include="Migrations\201605101335220_initalDatabaseSetup.resx">
-      <DependentUpon>201605101335220_initalDatabaseSetup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605101406082_TitleFromIntToString.resx">
-      <DependentUpon>201605101406082_TitleFromIntToString.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605101414289_changeTitleToInt.resx">
-      <DependentUpon>201605101414289_changeTitleToInt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605101452250_TitleToInt.resx">
-      <DependentUpon>201605101452250_TitleToInt.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="Migrations\201605091610578_Initial.resx">
-      <DependentUpon>201605091610578_Initial.cs</DependentUpon>
->>>>>>> connectForeignKeyForApplicationUser
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605091905346_newAssignmentController.resx">
-      <DependentUpon>201605091905346_newAssignmentController.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
