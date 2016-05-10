@@ -1,19 +1,61 @@
-﻿body {
+﻿Site.css
+
+* {
+    margin: 0 !important;
+}
+
+
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    background: rgb(98, 0, 234); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left,rgba(98, 0, 234, 0.5),rgba(13, 71, 161,0.7)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(right,rgba(98, 0, 234, 0.5),rgba(13, 71, 161,0.7)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right,rgba(98, 0, 234, 0.5),rgba(13, 71, 161,0.7)); /*Fx 3.6-15*/
+    background: linear-gradient(to right, rgba(98, 0, 234, 0.5), rgba(13, 71, 161,0.7)); /*Standard*/
+    background-image: url('Img/moust.png');
+    height: 100vh;
+}
+
+background-image: -webkit-gradient {
+    linear, left top, left bottom, color-stop(0, #4B2D44), color-stop(0.26, #6200EA), color-stop(1, #2962FF), color-stop(1, #4680FF);
+};
+
+
+/*                  Footer                  */
+
+.wrapper {
+    position: absolute;
+    bottom: 0
+}
+
+footer {
+    position: fixed !important;
+    bottom: 0 !important;
+    height: 50px !important;
+}
+
+.push {
+    height: 70px;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+   /* padding-left: 15px;
+    padding-right: 15px;*/
+   margin-left: 0 !important;
+   margin-right: 0 !important;
+   margin: 0 !important;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
 .dl-horizontal dt {
-    white-space: normal;
+    /*white-space: normal;*/
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -21,4 +63,238 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+
+/*                  Color of the headings           */
+h1, h2, h3, h4 {
+    color: rgb(204, 204, 204);
+}
+
+/*                  The nav-bar                     */
+
+.our-navbar {
+    background-color: rgba(96, 0, 128, 1) !important;
+}
+
+
+/*                  Log-in síðan                    */
+
+.background-login {
+    /*background-image: url("Img/bull3.png") !important;*/
+    background-size: cover !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    position: fixed;
+}
+
+.login-box {
+    margin-top: 23vh;
+    margin-left: 30vw !important;
+    margin-right: 25vw !important;
+    padding-top: 2vh;
+    padding-bottom: 4vh;
+    padding-left: 2vw;
+    /*border: 2px solid #231f20 !important;*/
+    background-color: rgba(255, 255, 255, 0);
+    width: 40vw;
+}
+
+.control-label {
+    color: rgb(204, 204, 204);
+    font-size: 14px;
+    border-radius: 0 !important;
+}
+
+input[type="text"] {
+    border-radius: 0 !important;
+    background-color: rgba(1, 82, 73, 0.1) !important;
+}
+
+input[type="password"] {
+    border-radius: 0 !important;
+    background-color: rgba(1, 82, 73, 0.1) !important;
+}
+
+.checkbox-remember {
+    color: rgb(204, 204, 204);
+}
+
+        /*          Submit takkinn          */
+
+.button-loginform {
+    letter-spacing: 0;
+    border-radius: 0;
+    display: inline-block;
+    background-color: rgba(148, 0, 153, 0.7);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 10px;
+    width: 10vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button-loginform:hover, .button-loginform:active {
+    color: #FFFFFF;
+    background-color: rgba(96, 0, 128, 1);
+}
+
+
+/*                  After log-in - Velja áfanga                 */
+
+.course-choice-title {
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    display: inline-block;
+}
+
+
+.button-course-choice {
+    /*margin-top: 10vh;*/
+    margin-left: 25vw;
+    margin-bottom: 20vh;
+    width: 20vw;
+    height: 10vh;
+    list-style-type: none;
+    border-radius: 0 !important;
+}
+
+.button-course-choice-selection {
+    margin-bottom: 40vh !important;
+    width: 20vw;
+    height: 10vh;
+    list-style-type: none;
+    border-radius: 0 !important;
+    font-size: 18px;
+    color: #e6e6e6;
+    background-color: rgba(1, 82, 73, 0.8);
+}
+
+.button-course-choice-selection:hover {
+    width: 20vw;
+    height: 10vh;
+    list-style-type: none;
+    border-radius: 0 !important;
+    font-size: 18px;
+    color: #FFFFFF;
+    background-color: rgba(1, 82, 73, 1);
+}
+
+
+.course-choice {
+    /*margin-left: 25vw;
+    margin-right: 25vw;*/
+    /*position: relative;*/
+    /*text-align: center;*/
+    list-style-type: none;
+    width: 20vw;
+    border-radius: 0 !important;
+    line-height: 4vh;
+    text-align: left;
+    font-size: 16px;
+}
+
+.fill-up {
+    display: block;
+    margin-bottom: 1vh;
+    text-decoration: none !important;
+}
+
+.course-choice a {
+    /*background-color: #cccccc;*/
+}
+
+
+/*                  Create new user                 */
+
+.top-title {
+    margin-top: 10vh !important;
+}
+
+    
+
+
+
+
+/*              Register - Create new account                   */
+
+#register-title {
+    margin-left: 16vw;
+    color: rgb(148, 0, 153);
+
+}
+
+#register-subtitle {
+    margin-left: 13.5vw;
+}
+
+.register-form {
+    margin-top: 9vh;
+    width: 35vw;
+    margin-left: 35vw;
+}
+
+
+.input-form {
+    padding: 20px;
+    //width: 35vw;
+}
+
+.button-register {
+    letter-spacing: 0;
+    border-radius: 0;
+    display: inline-block;
+    background-color: rgba(148, 0, 153, 0.7);
+    margin-top: -8px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.3em;
+    padding: 6px;
+    width: 7vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left: 13.5vw;
+}
+
+.button-register:hover {
+    color: #FFFFFF;
+    background-color: rgba(96, 0, 128, 1);
+}
+
+
+
+
+/*                  Create course                   */
+
+#create-course-title {
+    margin-top: -2vh !important;
+    margin-left: 14vw;
+    color: rgb(148, 0, 153);
+}
+
+#create-course-subtitle {
+    margin-left: 15.2vw;
+    margin-bottom: 6vh;
+}
+
+.create-course-form {
+    margin-top: 15vh !important;
+    margin-left: 35vw;
+}
+
+input[type="datetime"]{
+    background-color: transparent;
+    border-radius: 0;
 }
