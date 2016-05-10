@@ -204,29 +204,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605071831475_init.cs" />
-    <Compile Include="Migrations\201605071831475_init.Designer.cs">
-      <DependentUpon>201605071831475_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605071839052_addname.cs" />
-    <Compile Include="Migrations\201605071839052_addname.Designer.cs">
-      <DependentUpon>201605071839052_addname.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605072055132_ConnectToCourse.cs" />
-    <Compile Include="Migrations\201605072055132_ConnectToCourse.Designer.cs">
-      <DependentUpon>201605072055132_ConnectToCourse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605072141180_tryingForeignKeys.cs" />
-    <Compile Include="Migrations\201605072141180_tryingForeignKeys.Designer.cs">
-      <DependentUpon>201605072141180_tryingForeignKeys.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605081146108_test1.cs" />
-    <Compile Include="Migrations\201605081146108_test1.Designer.cs">
-      <DependentUpon>201605081146108_test1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605090933054_addingForeignKey.cs" />
-    <Compile Include="Migrations\201605090933054_addingForeignKey.Designer.cs">
-      <DependentUpon>201605090933054_addingForeignKey.cs</DependentUpon>
+    <Compile Include="Migrations\201605101723015_init.cs" />
+    <Compile Include="Migrations\201605101723015_init.Designer.cs">
+      <DependentUpon>201605101723015_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -333,23 +313,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605071831475_init.resx">
-      <DependentUpon>201605071831475_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605071839052_addname.resx">
-      <DependentUpon>201605071839052_addname.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605072055132_ConnectToCourse.resx">
-      <DependentUpon>201605072055132_ConnectToCourse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605072141180_tryingForeignKeys.resx">
-      <DependentUpon>201605072141180_tryingForeignKeys.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605081146108_test1.resx">
-      <DependentUpon>201605081146108_test1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605090933054_addingForeignKey.resx">
-      <DependentUpon>201605090933054_addingForeignKey.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605101723015_init.resx">
+      <DependentUpon>201605101723015_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

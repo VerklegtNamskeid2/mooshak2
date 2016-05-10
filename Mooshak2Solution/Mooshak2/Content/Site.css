@@ -116,11 +116,13 @@ h1, h2, h3, h4 {
 input[type="text"] {
     border-radius: 0 !important;
     background-color: rgba(1, 82, 73, 0.1) !important;
+    color: #fbfbfb;
 }
 
 input[type="password"] {
     border-radius: 0 !important;
     background-color: rgba(1, 82, 73, 0.1) !important;
+    color: #fbfbfb;
 }
 
 .checkbox-remember {
