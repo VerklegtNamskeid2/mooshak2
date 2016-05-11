@@ -317,7 +317,7 @@
     <Content Include="Views\Assignments\CreateTest.cshtml" />
     <Content Include="Views\Courses\CreateTest.cshtml" />
     <Content Include="Views\Courses\Manage.cshtml" />
-    <Content Include="Views\Assignments\CreateMilestoneTest.cshtml" />
+    <Content Include="Views\Assignments\CreateMilestone.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
