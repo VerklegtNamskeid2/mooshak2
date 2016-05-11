@@ -30,7 +30,7 @@ namespace Mooshak2.Services
 
             var milestones = _db.Milestones
                 .Where(x => x.AssignmentID == assignmentsID)
-                .Select(x => new AssignmentsMilestonesViewModels
+                .Select(x => new MilestonesViewModels
                 {
                     Title = x.Title
                 })
@@ -50,14 +50,13 @@ namespace Mooshak2.Services
        
             _db.Assignments.Add(model.assignment);
             _db.SaveChanges();
-            /* try
-             {
+          
+        }
 
-             }
-             catch
-             {
-
-             }*/
+        public void Add(MilestonesCreateViewModels model)
+        {
+            _db.Milestones.Add(model.milestone);
+            _db.SaveChanges();
         }
     }
 }

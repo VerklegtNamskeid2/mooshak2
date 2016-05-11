@@ -64,6 +64,23 @@ namespace Mooshak2.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult CreateMilestoneTest(MilestonesCreateViewModels model)
+        {
+
+            _service.Add(model);
+
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult CreateMilestoneTest()
+        {
+            return View();
+        }
+
+
         // GET: Assignments/Edit/5
         public ActionResult Edit(int? id)
         {

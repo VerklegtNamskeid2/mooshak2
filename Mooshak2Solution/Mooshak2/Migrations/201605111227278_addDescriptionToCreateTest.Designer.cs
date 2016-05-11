@@ -7,13 +7,13 @@ namespace Mooshak2.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class updatedCourseEntity : IMigrationMetadata
+    public sealed partial class addDescriptionToCreateTest : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updatedCourseEntity));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addDescriptionToCreateTest));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605102129002_updatedCourseEntity"; }
+            get { return "201605111227278_addDescriptionToCreateTest"; }
         }
         
         string IMigrationMetadata.Source
