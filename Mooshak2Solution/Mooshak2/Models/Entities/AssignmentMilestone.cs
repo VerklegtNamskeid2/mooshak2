@@ -27,6 +27,7 @@ namespace Mooshak2.Models.Entities
         public virtual Assignment Assignments { get; set; }
 
 
+        public string Description { get; set; }
 
         ///<summary>
         ///The title of the milestone. Example: "Part 1"
