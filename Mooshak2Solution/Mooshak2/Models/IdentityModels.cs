@@ -28,6 +28,7 @@ namespace Mooshak2.Models
         public DbSet<AssignmentMilestone>                   Milestones          { get; set; }
         public DbSet<Course>                                Courses             { get; set; }
         public DbSet<UsersCourse>                           UsersCourses        { get; set; }
+        public DbSet<Solution>                           Solutions           { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

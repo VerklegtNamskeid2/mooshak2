@@ -23,4 +23,5 @@ namespace Mooshak2.Models.ViewModels
         public virtual AssignmentMilestone Milestone { get; set; }
         //public string Title { get; set; }
     }
+
 }

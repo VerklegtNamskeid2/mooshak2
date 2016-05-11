@@ -1,6 +1,4 @@
-﻿@model Mooshak2.Models.ViewModels.AssignmentsViewModels
-
-@{
+﻿@{
     ViewBag.Title = "Details";
 }
 
@@ -12,14 +10,35 @@
     <dl class="dl-horizontal">
         
         <dt>
-            @Html.DisplayNameFor(model => model.Title)
+            @ViewBag.model.Assignment.Title
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
     </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Assignment: @ViewBag.model.Assignment.Title</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+           
+            <div class="form-group">
+                Lausn
+                <div class="col-md-10">
+                    <textarea name="solution" cols="60" rows="8"></textarea>
+                 </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Submit osllution" class="btn btn-default" />
+                </div>
+            </div>
+
+        </div>
+    }
 </div>
 <p>
    @* @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |

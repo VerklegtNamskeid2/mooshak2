@@ -220,12 +220,25 @@
     <Compile Include="Migrations\201605111427581_somethingGreate.Designer.cs">
       <DependentUpon>201605111427581_somethingGreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605112323092_newEntitySolution.cs" />
+    <Compile Include="Migrations\201605112323092_newEntitySolution.Designer.cs">
+      <DependentUpon>201605112323092_newEntitySolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605112326321_updatedSolution.cs" />
+    <Compile Include="Migrations\201605112326321_updatedSolution.Designer.cs">
+      <DependentUpon>201605112326321_updatedSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605112347344_someChanges.cs" />
+    <Compile Include="Migrations\201605112347344_someChanges.Designer.cs">
+      <DependentUpon>201605112347344_someChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entities\Assignment.cs" />
     <Compile Include="Models\Entities\AssignmentMilestone.cs" />
     <Compile Include="Models\Entities\Course.cs" />
     <Compile Include="Models\Entities\MooshakUser.cs" />
+    <Compile Include="Models\Entities\Solution.cs" />
     <Compile Include="Models\Entities\UsersCourse.cs" />
     <Compile Include="Models\IdentityManager.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -345,6 +358,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605111427581_somethingGreate.resx">
       <DependentUpon>201605111427581_somethingGreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605112323092_newEntitySolution.resx">
+      <DependentUpon>201605112323092_newEntitySolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605112326321_updatedSolution.resx">
+      <DependentUpon>201605112326321_updatedSolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605112347344_someChanges.resx">
+      <DependentUpon>201605112347344_someChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

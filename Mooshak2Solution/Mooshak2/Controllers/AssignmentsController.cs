@@ -34,15 +34,8 @@ namespace Mooshak2.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var testObject = _service.GetAssignmentsByID((int)id);
+            ViewBag.model = _service.GetAssignmentByID((int)id);
 
-
-            
-            /*Assignment assignment = db.Assignments.Find(id);
-            if (assignment == null)
-            {
-                return HttpNotFound();
-            }*/
             return View();
         }
 
@@ -79,10 +72,16 @@ namespace Mooshak2.Controllers
             return View();
         }
 
-        [HttpGet]
+        [HttpPost]
         public ActionResult CreateMilestoneTest()
         {
+            var newBla = new Solution
+            {
+                userID = 1,
+                code = "WORK DAMN YOU"
+            };
 
+            _service.AddSolution(newBla);
             return View();
         }
 
