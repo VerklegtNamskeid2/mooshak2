@@ -13,7 +13,12 @@ namespace Mooshak2.Models.ViewModels
 
     public class AssignmentsViewModels
     {
-        public List<MilestonesViewModels> Milestones { get; set; }
+        public List<AssignmentMilestone> Milestones { get; set; }
         public string Title { get; internal set; }
+    }
+    public class MilestonesCreateViewModels
+    {
+        public virtual AssignmentMilestone milestone { get; set; }
+        //public string Title { get; set; }
     }
 }

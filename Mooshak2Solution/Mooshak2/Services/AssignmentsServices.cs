@@ -22,7 +22,7 @@ namespace Mooshak2.Services
         }
         public AssignmentsViewModels GetAssignmentsByID(int assignmentsID)
         {
-            var assignments = _db.Courses.SingleOrDefault(x => x.ID == assignmentsID);
+            var assignments = _db.Assignments.SingleOrDefault(x => x.ID == assignmentsID);
             if (assignments == null)
             {
                 //TODO: kastavillu!
@@ -30,13 +30,9 @@ namespace Mooshak2.Services
 
             var milestones = _db.Milestones
                 .Where(x => x.AssignmentID == assignmentsID)
-                .Select(x => new MilestonesViewModels
-                {
-                    Title = x.Title
-                })
                 .ToList();
 
-            var viewModel = new AssignmentsViewModels
+            AssignmentsViewModels viewModel = new AssignmentsViewModels
             {
                 Title = assignments.Title,
                 Milestones = milestones
@@ -53,7 +49,7 @@ namespace Mooshak2.Services
           
         }
 
-        public void Add(MilestonesCreateViewModels model)
+        public void AddMilestone(MilestonesCreateViewModels model)
         {
             _db.Milestones.Add(model.milestone);
             _db.SaveChanges();

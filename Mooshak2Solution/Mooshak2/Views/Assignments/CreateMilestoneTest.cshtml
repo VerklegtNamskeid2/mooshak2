@@ -21,6 +21,21 @@
                 @Html.EditorFor(model => model.milestone.Title, new { htmlAttributes = new { @class = "form-control" } })
 
             </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.milestone.weight, "Weight", htmlAttributes: new { @class = "control-label col-md-2" })
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.milestone.weight, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.milestone.AssignmentID, "AssignmentID", htmlAttributes: new { @class = "control-label col-md-2" })
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.milestone.AssignmentID, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
 
         </div>
         <div class="form-group">
@@ -28,37 +43,6 @@
 
             <div class="col-md-10">
                 @Html.TextAreaFor(model => model.milestone.Description, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.assignment.OpeningDate, "OpeningDate", htmlAttributes: new { @class = "control-label col-md-2" })
-
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.assignment.OpeningDate, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.assignment.ClosingDate, "ClosingDate", htmlAttributes: new { @class = "control-label col-md-2" })
-
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.assignment.ClosingDate, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.assignment.SubmissionLimit, "SubmissionLimit", htmlAttributes: new { @class = "control-label col-md-2" })
-
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.assignment.SubmissionLimit, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.assignment.CourseID, "CourseID", htmlAttributes: new { @class = "control-label col-md-2" })
-
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.assignment.CourseID, new { htmlAttributes = new { @class = "form-control" } })
             </div>
         </div>
 

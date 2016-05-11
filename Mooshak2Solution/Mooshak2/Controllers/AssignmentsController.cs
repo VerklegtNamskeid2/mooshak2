@@ -28,10 +28,16 @@ namespace Mooshak2.Controllers
         // GET: Assignments/Details/5
         public ActionResult Details(int? id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
+            var testObject = _service.GetAssignmentsByID((int)id);
+
+
+            
             /*Assignment assignment = db.Assignments.Find(id);
             if (assignment == null)
             {
@@ -68,8 +74,7 @@ namespace Mooshak2.Controllers
         [HttpPost]
         public ActionResult CreateMilestoneTest(MilestonesCreateViewModels model)
         {
-
-            _service.Add(model);
+            _service.AddMilestone(model);
 
             return View();
         }
@@ -77,6 +82,7 @@ namespace Mooshak2.Controllers
         [HttpGet]
         public ActionResult CreateMilestoneTest()
         {
+
             return View();
         }
 
