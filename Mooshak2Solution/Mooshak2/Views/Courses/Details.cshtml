@@ -1,5 +1,4 @@
-﻿@model Mooshak2.Models.Entities.Course
-
+﻿
 @{
     ViewBag.Title = "Details";
 }
@@ -9,26 +8,13 @@
 <div>
     <h4>Course</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DateCreated)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DateCreated)
-        </dd>
-
-    </dl>
+    @ViewBag.model.Course.Title
+    <ul>
+    @foreach (var x in ViewBag.model.Assignments)
+    {
+        <li><a href="/Assignments/Details/@x.ID">@x.Title</a></li>
+    }
+    </ul>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
 </p>

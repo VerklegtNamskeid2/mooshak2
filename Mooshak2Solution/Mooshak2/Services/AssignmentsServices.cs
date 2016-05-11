@@ -34,7 +34,7 @@ namespace Mooshak2.Services
 
             AssignmentsViewModels viewModel = new AssignmentsViewModels
             {
-                Title = assignments.Title,
+                Assignment = assignments,
                 Milestones = milestones
             };
             return viewModel;
@@ -44,15 +44,17 @@ namespace Mooshak2.Services
         public void Add(AssignmentCreateViewModel model)
         {
        
-            _db.Assignments.Add(model.assignment);
+            _db.Assignments.Add(model.Assignment);
             _db.SaveChanges();
           
         }
 
         public void AddMilestone(MilestonesCreateViewModels model)
         {
-            _db.Milestones.Add(model.milestone);
+            _db.Milestones.Add(model.Milestone);
             _db.SaveChanges();
         }
+
+        
     }
 }

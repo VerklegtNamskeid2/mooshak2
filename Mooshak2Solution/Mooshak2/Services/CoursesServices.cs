@@ -56,17 +56,13 @@ namespace Mooshak2.Services
             {
                 //TODO: kastavillu!
             }
-            var assignments = _db.Assignments
+           var assignments = _db.Assignments
                 .Where(x => x.CourseID == courseID)
-                .Select(x => new Assignment
-                {
-                    Title = x.Title
-                })
                 .ToList();
 
             var viewModel = new CoursesViewModel
             {
-                Title = courses.Title,
+                Course = courses,
                 Assignments = assignments
             };
             return viewModel;

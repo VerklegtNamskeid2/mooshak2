@@ -33,12 +33,10 @@ namespace Mooshak2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Course course = db.Courses.Find(id);
-            if (course == null)
-            {
-                return HttpNotFound();
-            }
-            return View(course);
+
+            var model = _service.GetCourseByID((int)id);
+            ViewBag.model = model;
+            return View();
         }
 
         /*// GET: Courses/Create
@@ -148,5 +146,8 @@ namespace Mooshak2.Controllers
 
             return Redirect("/Courses/Manage/1");
         }
+
+
+
     }
 }
