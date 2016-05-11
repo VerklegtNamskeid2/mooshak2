@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mooshak2.Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,9 +8,7 @@ namespace Mooshak2.Models.ViewModels
 {
     public class AssignmentCreateViewModel
     {
-        public string Title { get; set; }
-        public string Description { get; set; }
-
+        public virtual Assignment assignment { get; set; }
     }
 
     public class AssignmentsViewModels

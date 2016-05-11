@@ -1,0 +1,18 @@
+﻿@model Mooshak2.Models.ViewModels.CourseAddUserViewModel
+
+
+@{
+    ViewBag.Title = "Manage";
+}
+
+<h2>Manage</h2>
+
+
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+
+
+    <input type="submit" />
+}

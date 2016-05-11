@@ -22,7 +22,7 @@ namespace Mooshak2.Services
         }
         public AssignmentsViewModels GetAssignmentsByID(int assignmentsID)
         {
-            var assignments = _db.Assignments.SingleOrDefault(x => x.ID == assignmentsID);
+            var assignments = _db.Courses.SingleOrDefault(x => x.ID == assignmentsID);
             if (assignments == null)
             {
                 //TODO: kastavillu!
@@ -45,41 +45,19 @@ namespace Mooshak2.Services
         }
         
 
-        public CourseViewModels GetCoursesByID(int courseID)
+        public void Add(AssignmentCreateViewModel model)
         {
-            var courses = _db.Courses.SingleOrDefault(x => x.ID == courseID);
-            if (courses == null)
-            {
-                //TODO: kastavillu!
-            }
-            var assignments = _db.Assignments
-                .Where(x => x.CourseID == courseID)
-                .Select(x => new AssignmentsViewModels
-                {
-                    Title = x.Title
-                })
-                .ToList();
+       
+            _db.Assignments.Add(model.assignment);
+            _db.SaveChanges();
+            /* try
+             {
 
-           var viewModel = new CoursesViewModels
-            {
-                Title = courses.Title,
-                Assignments = assignments
-            };
-            return viewModel;
-        }
-        
-        public void Add(Assignment newAssignment)
-        {
-            _db.Assignments.Add(newAssignment);
+             }
+             catch
+             {
 
-            try
-            {
-                _db.SaveChanges();  
-            }
-            catch
-            {
-
-            }
+             }*/
         }
     }
 }

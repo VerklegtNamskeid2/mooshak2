@@ -11,7 +11,6 @@ namespace Mooshak2.Models.Entities
         public int ID { get; set; }
         
         public string UserID { get; set; }
-
         [ForeignKey("UserID")]
         public virtual ApplicationUser User { get; set; }
 
@@ -34,6 +33,7 @@ namespace Mooshak2.Models.Entities
 
         
         public int RoleID { get; set; }
+        
 
         
     }

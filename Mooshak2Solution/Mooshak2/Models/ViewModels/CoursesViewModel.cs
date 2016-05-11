@@ -1,0 +1,27 @@
+﻿using Mooshak2.Models.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace Mooshak2.Models.ViewModels
+{
+  
+    public class CoursesCreateViewModel
+    {
+        public virtual Course course { get; set; }
+    }
+
+    public class CoursesViewModel
+    {
+        public List<Assignment> Assignments { get; set; }
+        public string Title { get; internal set; }
+    }
+        
+    public class CourseAddUserViewModel
+    {
+        public int CourseID { get; set; }
+        public string UserID   { get; set; }
+    }
+    
+}

@@ -8,17 +8,22 @@ using System.Web;
 using System.Web.Mvc;
 using Mooshak2.Models;
 using Mooshak2.Models.Entities;
+using Mooshak2.Services;
+using Microsoft.AspNet.Identity;
+
+using Mooshak2.Models.ViewModels;
 
 namespace Mooshak2.Controllers
 {
     public class CoursesController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+       private ApplicationDbContext db = new ApplicationDbContext();
+        private CoursesServices _service = new CoursesServices();
 
         // GET: Courses
         public ActionResult Index()
         {
-            return View(db.Courses.ToList());
+            return View();
         }
 
         // GET: Courses/Details/5
@@ -46,17 +51,17 @@ namespace Mooshak2.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,DateCreated")] Course course)
+        public ActionResult CreateTest(CoursesCreateViewModel model)
         {
-            if (ModelState.IsValid)
-            {
-                db.Courses.Add(course);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            _service.Add(model);
+            
+           return View();
+        }
 
-            return View(course);
+        [HttpGet]
+        public ActionResult CreateTest()
+        {
+            return View();
         }
 
         // GET: Courses/Edit/5
@@ -123,6 +128,25 @@ namespace Mooshak2.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        [HttpGet]
+        public ActionResult Manage(int? id)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Manage(CourseAddUserViewModel model)
+        {
+            var newModel = new CourseAddUserViewModel
+            {
+                CourseID = 1,
+                UserID = User.Identity.GetUserId(),
+            };
+            _service.AddUserToCourseTest(newModel);
+
+            return Redirect("/Courses/Manage/1");
         }
     }
 }

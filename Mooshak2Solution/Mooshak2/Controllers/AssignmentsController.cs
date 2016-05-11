@@ -53,18 +53,8 @@ namespace Mooshak2.Controllers
         [HttpPost]
         public ActionResult CreateTest(AssignmentCreateViewModel model)
         {
-            var openinDate = new DateTime(2016, 04, 01);
-            var closeDate = new DateTime(2016, 04, 01);
-            var testObject = new Assignment
-            {
-                Title = model.Title,
-                CourseID = 1,
-                Description = model.Description,
-                OpeningDate = openinDate,
-                ClosingDate = closeDate,
-                SubmissionLimit = 3
-            };
-            _service.Add(testObject);
+
+            _service.Add(model);
 
             return View();
         }
