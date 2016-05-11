@@ -41,17 +41,17 @@ namespace Mooshak2.Controllers
             return View(course);
         }
 
-        // GET: Courses/Create
+        /*// GET: Courses/Create
         public ActionResult Create()
         {
             return View();
-        }
+        }*/
 
         // POST: Courses/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult CreateTest(CoursesCreateViewModel model)
+        public ActionResult Create(CoursesCreateViewModel model)
         {
             _service.Add(model);
             
@@ -59,7 +59,7 @@ namespace Mooshak2.Controllers
         }
 
         [HttpGet]
-        public ActionResult CreateTest()
+        public ActionResult Create()
         {
             return View();
         }
