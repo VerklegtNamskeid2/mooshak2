@@ -20,6 +20,8 @@ namespace Mooshak2.Services
             //TODO:
             return null;
         }
+        // Sækir verkefni með assignmentID, setur alla verkefnahluta í lista.
+        // Færir yfir í gagnagrunninn
         public AssignmentsViewModel GetAssignmentByID(int assignmentID)
         {
             var assignment = _db.Assignments.SingleOrDefault(x => x.ID == assignmentID);
