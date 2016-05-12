@@ -3,7 +3,7 @@ namespace Mooshak2.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class someting : DbMigration
+    public partial class userSolution : DbMigration
     {
         public override void Up()
         {

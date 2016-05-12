@@ -10,10 +10,13 @@
     <dl class="dl-horizontal">
         
         <dt>
-            @ViewBag.model.Assignment.Title
+            @ViewBag.model.Assignment.Title    
         </dt>
     </dl>
-
+    @foreach (var x in ViewBag.model.Milestones)
+    {
+        <li><a href="/Assignments/MilestoneDetails/@x.ID">@x.Title</a></li>
+    }
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()

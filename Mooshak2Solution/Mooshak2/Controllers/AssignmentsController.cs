@@ -49,15 +49,15 @@ namespace Mooshak2.Controllers
         // POST: Assignments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost, ActionName("CreateMilestoneTest")]
-        //[HttpPost]
+        
+        [HttpPost]
         public ActionResult Create(AssignmentCreateViewModel model)
         {
 
             _service.Add(model);
 
-            return RedirectToAction("CreateMilestoneTest");
-            //return View();
+            //return RedirectToAction("CreateMilestoneTest");
+            return View();
         }
 
         /* [HttpGet]
@@ -183,6 +183,18 @@ namespace Mooshak2.Controllers
             */
             _service.AddMilestoneIO(model);
 
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult MilestoneDetail(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            ViewBag.model = _service.GetMilestoneByID((int)id);
             return View();
         }
     }

@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "MilestoneDetail";
+}
+
+<h2>MilestoneDetail</h2>
+
+
+
+
+<h4>Milestones</h4>
+<hr />
+@ViewBag.model.Milestones.Title
+
+<ul>
+    @foreach (var x in ViewBag.model.Milestones)
+    {
+        <li><a href="/Assignments/MilestoneDetails/@x.ID">@x.Title</a></li>
+    }
+</ul>
