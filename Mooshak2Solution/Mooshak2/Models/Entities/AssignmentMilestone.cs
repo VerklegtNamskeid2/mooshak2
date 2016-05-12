@@ -38,6 +38,6 @@ namespace Mooshak2.Models.Entities
         /// Example: if this milestone is 15% of the grade of the assignment,
         /// the this porperty conteins the value 15.
         /// </summary>
-        public int weight { get; set; }
+        public int Weight { get; set; }
     }
 }

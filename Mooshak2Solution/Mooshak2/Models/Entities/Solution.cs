@@ -8,9 +8,9 @@ namespace Mooshak2.Models.Entities
     public class Solution
     {
         public int ID { get; set; }
-        public int userID { get; set; }
-        public int milestoneID { get; set; }
-        public string code { get; set; }
+        public int UserID { get; set; }
+        public int MilestoneID { get; set; }
+        public string Code { get; set; }
 
     }
 }

@@ -77,8 +77,8 @@ namespace Mooshak2.Controllers
         {
             var newBla = new Solution
             {
-                userID = 1,
-                code = "WORK DAMN YOU"
+                UserID = 1,
+                Code = "WORK DAMN YOU"
             };
 
             _service.AddSolution(newBla);
