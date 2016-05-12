@@ -1,6 +1,15 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    background: rgb(98, 0, 234); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left,rgba(98, 0, 234, 0.5),rgba(13, 71, 161,0.7)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(right,rgba(98, 0, 234, 0.5),rgba(13, 71, 161,0.7)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right,rgba(98, 0, 234, 0.5),rgba(13, 71, 161,0.7)); /*Fx 3.6-15*/
+    background: linear-gradient(to right, rgba(98, 0, 234, 0.5), rgba(13, 71, 161,0.7)); /*Standard*/
+    background-image: url('Img/moust.png');
+    height: 100vh;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +30,227 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+/* Positioning the footer */
+
+footer {
+    position: fixed;
+    bottom: 0 !important;
+}
+
+/*        -------------------------------------------------------           */
+
+
+.our-navbar {
+    background-color: rgba(96, 0, 128, 1) !important;
+}
+
+/*                                  ON ALL PAGES                             */
+
+.top-title {
+    margin-left: 14vw;
+    margin-top: -14vh;
+    margin-bottom: 13vh;
+    color: rgb(148, 0, 153);
+}
+
+
+/*                                  LOG-IN PAGE                              */
+
+.login-box {
+    margin-top: 23vh;
+    margin-left: 30vw !important;
+    margin-right: 25vw !important;
+    padding-top: 2vh;
+    padding-bottom: 4vh;
+    padding-left: 2vw;
+    /*border: 2px solid #231f20 !important;*/
+    background-color: rgba(255, 255, 255, 0);
+    width: 40vw;
+}
+
+input[type="text"] {
+    border-radius: 0 !important;
+    background-color: rgba(1, 82, 73, 0.1) !important;
+    color: #fbfbfb;
+}
+
+input[type="password"] {
+    border-radius: 0 !important;
+    background-color: rgba(1, 82, 73, 0.1) !important;
+    color: #fbfbfb;
+}
+
+.background-login {
+    /*background-image: url("Img/bull3.png") !important;*/
+    background-size: cover !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    position: fixed;
+}
+
+.control-label {
+    color: rgb(204, 204, 204);
+    font-size: 14px;
+    border-radius: 0 !important;
+}
+
+.checkbox-remember {
+    color: rgb(204, 204, 204);
+}
+
+.button-loginform {
+    letter-spacing: 0;
+    border-radius: 0;
+    display: inline-block;
+    background-color: rgba(148, 0, 153, 0.7);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 10px;
+    width: 10vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button-loginform:hover, .button-loginform:active {
+    color: #FFFFFF;
+    background-color: rgba(96, 0, 128, 1);
+}
+
+
+
+/*                      CREATE COURSE                     */
+
+.create-course-title {
+    margin-left: 40vw;
+    margin-top: 14vh;
+    margin-bottom: 3vh;
+    color: rgb(148, 0, 153);
+}
+
+textarea {
+    background-color: transparent;
+    color: rgb(204, 204, 204);
+}
+
+input[type=datetime] {
+    background-color: transparent;
+}
+
+.create-course-box {
+    margin-left: 28vw;
+}
+
+.create-course-button {
+    letter-spacing: 0;
+    border-radius: 0;
+    display: inline-block;
+    background-color: rgba(148, 0, 153, 0.7);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 10px;
+    width: 10vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.create-course-button:hover, .create-course-button:active {
+    color: #FFFFFF;
+    background-color: rgba(96, 0, 128, 1);
+}
+
+/*                      REGISTER                        */
+
+.register-title {
+    margin-left: 9.5vw;
+    margin-top: 14vh;
+    margin-bottom: 3vh;
+    color: rgb(148, 0, 153);
+}
+
+.register-box {
+    margin-left: 28vw;
+}
+
+.register-button {
+    letter-spacing: 0;
+    border-radius: 0;
+    display: inline-block;
+    background-color: rgba(148, 0, 153, 0.7);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 10px;
+    width: 10vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.register-button:hover, .register-button:active {
+    color: #FFFFFF;
+    background-color: rgba(96, 0, 128, 1);
+}
+
+
+/*                          TENGJA SAMAN NOTANDA OG ÁFANGA                          */
+
+
+
+.connect-title {
+    margin-left: 40vw;
+    margin-top: 14vh;
+    color: rgb(148, 0, 153);
+}
+
+.connect-title-2 {
+    margin-top: -1vh;
+    margin-left: 37.5vw;
+    color: rgb(148, 0, 153);
+
+}
+
+.connect-box {
+    margin-top: 5vh;
+    margin-left: 28vw;
+}
+
+input[type=number] {
+    background-color: transparent;
+    border-radius: 0 !important;
+}
+
+.connect-button {
+    letter-spacing: 0;
+    border-radius: 0;
+    display: inline-block;
+    background-color: rgba(148, 0, 153, 0.7);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 10px;
+    width: 10vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 1px;
+    margin-top: 2vh;
+}
+
+.connect-button:hover, .register-button:active {
+    color: #FFFFFF;
+    background-color: rgba(96, 0, 128, 1);
+}
+
+.back-to-list {
+    margin-left: 8vw;
 }
