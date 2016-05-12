@@ -42,46 +42,51 @@ namespace Mooshak2.Controllers
         // GET: Assignments/Create
         public ActionResult Create()
         {
-            //ViewBag.CourseID = new SelectList(db.Courses, "ID", "Name");
+            ViewBag.CourseID = new SelectList(db.Courses, "ID", "Name");
             return View();
-        }
+        } 
 
         // POST: Assignments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult CreateTest(AssignmentCreateViewModel model)
+        public ActionResult Create(AssignmentCreateViewModel model)
         {
 
             _service.Add(model);
 
+            //return RedirectToAction("CreateMilestoneTest");
             return View();
         }
 
-        [HttpGet]
-        public ActionResult CreateTest()
+       /* [HttpGet]
+        public ActionResult Create()
         {
-            return View();
-        }
+            return RedirectToAction("CreateMilestoneTest");
+            //return View();
+        }*/
 
         [HttpPost]
-        public ActionResult CreateMilestoneTest(MilestonesCreateViewModels model)
+        public ActionResult CreateMilestone(MilestonesCreateViewModels model)
         {
             _service.AddMilestone(model);
 
             return View();
         }
 
-        [HttpPost]
-        public ActionResult CreateMilestoneTest()
+        [HttpGet]
+        public ActionResult CreateMilestone()
         {
-            var newBla = new Solution
+            /*var newBla = new Solution
             {
                 userID = 1,
                 code = "WORK DAMN YOU"
             };
 
             _service.AddSolution(newBla);
+            return View();*/
+
+            ViewBag.AssignmentID = new SelectList(db.Assignments, "ID", "Name");
             return View();
         }
 

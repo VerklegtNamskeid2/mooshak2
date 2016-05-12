@@ -1,10 +1,10 @@
-﻿@model Mooshak2.Models.ViewModels.MilestonesCreateViewModels
-
+﻿
+@model Mooshak2.Models.ViewModels.MilestonesCreateViewModels
 @{
-    ViewBag.Title = "Create Milestones";
+    ViewBag.Title = "CreateMilestoneTest";
 }
 
-<h2>Create Milestone</h2>
+<h2>CreateMilestoneTest</h2>
 
 @using (Html.BeginForm())
 {
@@ -15,34 +15,34 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.milestone.Title, "Title", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Milestone.Title, "Title", htmlAttributes: new { @class = "control-label col-md-2" })
 
             <div class="col-md-10">
-                @Html.EditorFor(model => model.milestone.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Milestone.Title, new { htmlAttributes = new { @class = "form-control" } })
 
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.milestone.weight, "Weight", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Milestone.weight, "Weight", htmlAttributes: new { @class = "control-label col-md-2" })
 
             <div class="col-md-10">
-                @Html.EditorFor(model => model.milestone.weight, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Milestone.weight, new { htmlAttributes = new { @class = "form-control" } })
             </div>
 
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.milestone.AssignmentID, "AssignmentID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Milestone.AssignmentID, "AssignmentID", htmlAttributes: new { @class = "control-label col-md-2" })
 
             <div class="col-md-10">
-                @Html.EditorFor(model => model.milestone.AssignmentID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Milestone.AssignmentID, new { htmlAttributes = new { @class = "form-control" } })
             </div>
 
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.milestone.Description, "Description", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Milestone.Description, "Description", htmlAttributes: new { @class = "control-label col-md-2" })
 
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.milestone.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.Milestone.Description, new { htmlAttributes = new { @class = "form-control" } })
             </div>
         </div>
 
@@ -55,3 +55,61 @@
 
     </div>
 }
+
+@*@model Mooshak2.Models.ViewModels.MilestonesCreateViewModels
+
+    @{
+        ViewBag.Title = "Create Milestones";
+    }
+
+    <h2>Create Milestone</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Assignment</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Milestone.Title, "Title", htmlAttributes: new { @class = "control-label col-md-2" })
+
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Milestone.Title, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Milestone.weight, "Weight", htmlAttributes: new { @class = "control-label col-md-2" })
+
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Milestone.weight, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Milestone.AssignmentID, "AssignmentID", htmlAttributes: new { @class = "control-label col-md-2" })
+
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Milestone.AssignmentID, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Milestone.Description, "Description", htmlAttributes: new { @class = "control-label col-md-2" })
+
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Milestone.Description, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Submit assignment" class="btn btn-default" />
+                </div>
+            </div>
+
+        </div>
+    }*@
