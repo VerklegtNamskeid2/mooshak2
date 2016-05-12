@@ -3,14 +3,12 @@
     ViewBag.Title = "Create Course";
 }
 
-<h2>Create Course</h2>
+
 @using (Html.BeginForm())
 {
+    <h2 class="create-course-title">Create Course</h2>
     @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>Courses</h4>
-        <hr />
+    <div class="form-horizontal create-course-box">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.course.Title, "Title", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -35,7 +33,7 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create Course" class="btn btn-default" />
+                <input type="submit" value="Create Course" class="btn btn-default create-course-button" />
             </div>
         </div>
     </div>
