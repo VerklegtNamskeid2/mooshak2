@@ -55,13 +55,15 @@ namespace Mooshak2.Controllers
 
             _service.Add(model);
 
+            //return RedirectToAction("CreateMilestoneTest");
             return View();
         }
 
         [HttpGet]
         public ActionResult CreateTest()
         {
-            return View();
+            return RedirectToAction("CreateMilestoneTest");
+            //return View();
         }
 
         [HttpPost]
@@ -72,7 +74,7 @@ namespace Mooshak2.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult CreateMilestoneTest()
         {
             var newBla = new Solution
