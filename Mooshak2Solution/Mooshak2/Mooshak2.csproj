@@ -232,6 +232,10 @@
     <Compile Include="Migrations\201605112347344_someChanges.Designer.cs">
       <DependentUpon>201605112347344_someChanges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605121031561_fixingentities.cs" />
+    <Compile Include="Migrations\201605121031561_fixingentities.Designer.cs">
+      <DependentUpon>201605121031561_fixingentities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entities\Assignment.cs" />
@@ -367,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605112347344_someChanges.resx">
       <DependentUpon>201605112347344_someChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605121031561_fixingentities.resx">
+      <DependentUpon>201605121031561_fixingentities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
