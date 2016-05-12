@@ -15,26 +15,26 @@ namespace Mooshak2.Services
         {
             _db = new ApplicationDbContext();
         }
-        public List<AssignmentsViewModels> GetAssignmentsInCourse(int courseID)
+        public List<AssignmentsViewModel> GetAssignmentsInCourse(int courseID)
         {
             //TODO:
             return null;
         }
-        public AssignmentsViewModels GetAssignmentByID(int assignmentsID)
+        public AssignmentsViewModel GetAssignmentByID(int assignmentID)
         {
-            var assignments = _db.Assignments.SingleOrDefault(x => x.ID == assignmentsID);
-            if (assignments == null)
+            var assignment = _db.Assignments.SingleOrDefault(x => x.ID == assignmentID);
+            if (assignment == null)
             {
                 //TODO: kastavillu!
             }
 
             var milestones = _db.Milestones
-                .Where(x => x.AssignmentID == assignmentsID)
+                .Where(x => x.AssignmentID == assignmentID)
                 .ToList();
 
-            AssignmentsViewModels viewModel = new AssignmentsViewModels
+            AssignmentsViewModel viewModel = new AssignmentsViewModel
             {
-                Assignment = assignments,
+                Assignment = assignment,
                 Milestones = milestones
             };
             return viewModel;
@@ -49,7 +49,7 @@ namespace Mooshak2.Services
 
         }
 
-        public void AddMilestone(MilestonesCreateViewModels model)
+        public void AddMilestone(MilestonesCreateViewModel model)
         {
             _db.Milestones.Add(model.Milestone);
             _db.SaveChanges();

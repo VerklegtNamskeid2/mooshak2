@@ -22,7 +22,7 @@ namespace Mooshak2.Controllers
         }
 
         // GET: UsersCourses/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Detail(int? id)
         {
             if (id == null)
             {

@@ -65,7 +65,7 @@ namespace Mooshak2.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateMilestoneTest(MilestonesCreateViewModels model)
+        public ActionResult CreateMilestoneTest(MilestonesCreateViewModel model)
         {
             _service.AddMilestone(model);
 
