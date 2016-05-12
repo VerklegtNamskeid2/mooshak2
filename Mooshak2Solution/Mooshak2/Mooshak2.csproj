@@ -327,11 +327,9 @@
     <Content Include="Views\Assignments\Delete.cshtml" />
     <Content Include="Views\Assignments\Edit.cshtml" />
     <Content Include="Views\Assignments\Index.cshtml" />
-    <Content Include="Views\Assignments\CreateTest.cshtml" />
     <Content Include="Views\Courses\CreateTest.cshtml" />
     <Content Include="Views\Courses\Manage.cshtml" />
     <Content Include="Views\Assignments\CreateMilestone.cshtml" />
-    <Content Include="Views\Assignments\CreateMilestoneTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
