@@ -77,13 +77,16 @@ namespace Mooshak2.Controllers
         [HttpGet]
         public ActionResult CreateMilestone()
         {
-            var newBla = new Solution
+            /*var newBla = new Solution
             {
                 userID = 1,
                 code = "WORK DAMN YOU"
             };
 
             _service.AddSolution(newBla);
+            return View();*/
+
+            ViewBag.AssignmentID = new SelectList(db.Assignments, "ID", "Name");
             return View();
         }
 
