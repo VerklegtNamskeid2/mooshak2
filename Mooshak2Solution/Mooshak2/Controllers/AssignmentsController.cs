@@ -161,9 +161,9 @@ namespace Mooshak2.Controllers
 
         //GET:/Assignment/MilestoneAddIO/5/
         [HttpGet]
-        public ActionResult MilestoneAddIO(int? milestoneID)
+        public ActionResult MilestoneAddIO(int id)//(int? milestoneID)
         {
-            var milestone = _service.GetMilestoneByID((int)milestoneID);
+            var milestone = _service.GetMilestoneByID(id);
             ViewBag.milestone = milestone;
 
             return View();
