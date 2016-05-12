@@ -15,14 +15,14 @@ namespace Mooshak2.Controllers
 {
     public class AssignmentsController : Controller
     {
-       private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
         private AssignmentsServices _service = new AssignmentsServices();
         // GET: Assignments
         public ActionResult Index()
         {
             //var assignments = _db.Assignments.Include(a => a.Course);
             return View();
-            
+
         }
 
         // GET: Assignments/Details/5
@@ -44,7 +44,7 @@ namespace Mooshak2.Controllers
         {
             ViewBag.CourseID = new SelectList(db.Courses, "ID", "Name");
             return View();
-        } 
+        }
 
         // POST: Assignments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -59,12 +59,12 @@ namespace Mooshak2.Controllers
             return View();
         }
 
-       /* [HttpGet]
-        public ActionResult Create()
-        {
-            return RedirectToAction("CreateMilestoneTest");
-            //return View();
-        }*/
+        /* [HttpGet]
+         public ActionResult Create()
+         {
+             return RedirectToAction("CreateMilestoneTest");
+             //return View();
+         }*/
 
         [HttpPost]
         public ActionResult CreateMilestone(MilestonesCreateViewModels model)
@@ -157,6 +157,31 @@ namespace Mooshak2.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        //GET:/Assignment/MilestoneAddIO/5/
+        [HttpGet]
+        public ActionResult MilestoneAddIO(int? milestoneID)
+        {
+            var milestone = _service.GetMilestoneByID((int)milestoneID);
+            ViewBag.milestone = milestone;
+
+            return View();
+        }
+
+        //POST:/Assignment/MilestoneAddIO/5/
+        [HttpPost]
+        public ActionResult MilestoneAddIO(MilestonesIOViewModels model)
+        {
+
+            /*var milestoneIO = new MilestoneInputOutput
+            {
+                ID = 5,
+            };
+            */
+            _service.AddMilestoneIO(model);
+
+            return View();
         }
     }
 }

@@ -29,6 +29,7 @@ namespace Mooshak2.Migrations
                     {
                         ID = c.Int(nullable: false, identity: true),
                         AssignmentID = c.Int(nullable: false),
+                        Description = c.String(),
                         Title = c.String(),
                         weight = c.Int(nullable: false),
                     })
@@ -37,12 +38,26 @@ namespace Mooshak2.Migrations
                 .Index(t => t.AssignmentID);
             
             CreateTable(
+                "dbo.MilestoneInputOutputs",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Input = c.String(),
+                        Output = c.String(),
+                        MilestoneID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.AssignmentMilestones", t => t.MilestoneID, cascadeDelete: true)
+                .Index(t => t.MilestoneID);
+            
+            CreateTable(
                 "dbo.Courses",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
                         DateCreated = c.DateTime(nullable: false),
                         Title = c.String(),
+                        Description = c.String(),
                     })
                 .PrimaryKey(t => t.ID);
             
@@ -68,6 +83,17 @@ namespace Mooshak2.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
+            
+            CreateTable(
+                "dbo.Solutions",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        userID = c.Int(nullable: false),
+                        milestoneID = c.Int(nullable: false),
+                        code = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -143,6 +169,7 @@ namespace Mooshak2.Migrations
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.Assignments", "CourseID", "dbo.Courses");
+            DropForeignKey("dbo.MilestoneInputOutputs", "MilestoneID", "dbo.AssignmentMilestones");
             DropForeignKey("dbo.AssignmentMilestones", "AssignmentID", "dbo.Assignments");
             DropIndex("dbo.UsersCourses", new[] { "CourseID" });
             DropIndex("dbo.UsersCourses", new[] { "UserID" });
@@ -152,15 +179,18 @@ namespace Mooshak2.Migrations
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.MilestoneInputOutputs", new[] { "MilestoneID" });
             DropIndex("dbo.AssignmentMilestones", new[] { "AssignmentID" });
             DropIndex("dbo.Assignments", new[] { "CourseID" });
             DropTable("dbo.UsersCourses");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
+            DropTable("dbo.Solutions");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.Courses");
+            DropTable("dbo.MilestoneInputOutputs");
             DropTable("dbo.AssignmentMilestones");
             DropTable("dbo.Assignments");
         }
