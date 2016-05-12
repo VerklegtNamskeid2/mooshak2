@@ -41,6 +41,22 @@ namespace Mooshak2.Services
         }
 
 
+        public MilestonesCreateViewModels GetMilestoneByID(int milestoneID)
+        {
+            var milestones = _db.Milestones.SingleOrDefault(x => x.ID == milestoneID);
+            if (milestones == null)
+            {
+                //TODO: kastavillu!
+            }
+
+
+            MilestonesCreateViewModels viewModel = new MilestonesCreateViewModels
+            {
+                Milestone = milestones
+            };
+            return viewModel;
+        }
+
         public void Add(AssignmentCreateViewModel model)
         {
 
@@ -61,6 +77,12 @@ namespace Mooshak2.Services
             _db.SaveChanges();
                     
 
+        }
+
+        public void AddMilestoneIO(MilestonesIOViewModels model)
+        {
+            _db.InputOutput.Add(model.MilestoneIO);
+            _db.SaveChanges();
         }
     }
 }

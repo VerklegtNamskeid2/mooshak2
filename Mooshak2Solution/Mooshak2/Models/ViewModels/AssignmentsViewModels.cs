@@ -21,7 +21,12 @@ namespace Mooshak2.Models.ViewModels
     public class MilestonesCreateViewModels
     {
         public virtual AssignmentMilestone Milestone { get; set; }
+
         //public string Title { get; set; }
+    }
+    public class MilestonesIOViewModels
+    {
+        public virtual MilestoneInputOutput MilestoneIO { get; set; }
     }
 
 }

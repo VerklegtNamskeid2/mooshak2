@@ -39,5 +39,7 @@ namespace Mooshak2.Models.Entities
         /// the this porperty conteins the value 15.
         /// </summary>
         public int weight { get; set; }
+
+        public ICollection<MilestoneInputOutput> InputOutput { get; set; }
     }
 }
