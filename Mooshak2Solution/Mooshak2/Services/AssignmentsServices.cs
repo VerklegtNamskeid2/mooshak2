@@ -84,5 +84,10 @@ namespace Mooshak2.Services
             _db.InputOutput.Add(model.MilestoneIO);
             _db.SaveChanges();
         }
+
+        public List<MilestoneInputOutput> GetMilestoneInputOutputs(int id)
+        {
+            return _db.InputOutput.Where(x => x.MilestoneID == id).ToList();
+        }
     }
 }

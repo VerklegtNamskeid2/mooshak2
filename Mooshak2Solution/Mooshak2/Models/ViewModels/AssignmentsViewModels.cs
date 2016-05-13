@@ -29,4 +29,8 @@ namespace Mooshak2.Models.ViewModels
         public virtual MilestoneInputOutput MilestoneIO { get; set; }
     }
 
+    public class MilestoneSubmitViewModels
+    {
+        public int something { get; set; }
+    }
 }

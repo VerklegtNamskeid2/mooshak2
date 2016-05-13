@@ -19,10 +19,7 @@ namespace Mooshak2.Models.Entities
         [ForeignKey("Milestone")]
         public int MilestoneID { get; set; }
         public virtual AssignmentMilestone Milestone { get; set; }
-
-
-
         public string code { get; set; }
-
+        public double correctness { get; set; }
     }
 }
