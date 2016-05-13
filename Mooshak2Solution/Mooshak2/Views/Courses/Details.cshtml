@@ -6,10 +6,16 @@
 <h2>Course: @ViewBag.model.Course.Title</h2>
 
 <div>
-    <h4><a href="/Assignments/Create">Create assignment</a></h4>
+    <button type="button" class="btn create-assignment-button">
+        <a href="/Assignments/Create">Create assignment</a>
+    </button>
 
     <hr />
-    <ul>
+
+
+
+
+   <ul>
     @foreach (var x in ViewBag.model.Assignments)
     {
         <li><a href="/Assignments/Details/@x.ID">@x.Title</a></li>

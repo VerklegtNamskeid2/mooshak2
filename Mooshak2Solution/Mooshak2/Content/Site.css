@@ -352,3 +352,35 @@ input[type=number] {
 }
 
 
+/*                      CREATE ASSIGNMENT               */
+
+.create-assignment-button {
+    letter-spacing: 0;
+    border-radius: 0;
+    display: inline-block;
+    background-color: rgba(148, 0, 153, 0.7);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 10px;
+    width: 14vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.create-assignment-button:hover, .create-assignment-button:active {
+    color: #FFFFFF;
+    background-color: rgba(96, 0, 128, 1);
+}
+
+.create-assignment-button a {
+    color: white;
+    text-decoration: none;
+}
+
+.create-assignment-button a:hover {
+    color: white;
+    text-decoration: none;
+}
