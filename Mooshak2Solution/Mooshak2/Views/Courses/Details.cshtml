@@ -3,12 +3,12 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Course: @ViewBag.model.Course.Title</h2>
 
 <div>
-    <h4>Course</h4>
+    <h4><a href="/Assignments/Create">Create assignment</a></h4>
+
     <hr />
-    @ViewBag.model.Course.Title
     <ul>
     @foreach (var x in ViewBag.model.Assignments)
     {

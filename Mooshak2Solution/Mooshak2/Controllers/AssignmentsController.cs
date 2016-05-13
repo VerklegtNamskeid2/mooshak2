@@ -42,8 +42,10 @@ namespace Mooshak2.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            ViewBag.model = _service.GetAssignmentByID((int)id);
-
+            var obj = _service.GetAssignmentByID((int)id);
+            var isTeacher = _courseservice.GetCourseByID(obj.Assignment.CourseID);
+            ViewBag.model = obj;
+            ViewBag.isTeacher = isTeacher;
             return View();
         }
 
@@ -74,7 +76,6 @@ namespace Mooshak2.Controllers
         [Authorize]
         public ActionResult Create(AssignmentCreateViewModel model)
         {
-
             model.Assignment.CourseID = model.CourseID;
             _service.Add(model);
 
@@ -100,15 +101,6 @@ namespace Mooshak2.Controllers
         [HttpGet]
         public ActionResult CreateMilestone()
         {
-            /*var newBla = new Solution
-            {
-                userID = 1,
-                code = "WORK DAMN YOU"
-            };
-
-            _service.AddSolution(newBla);
-            return View();*/
-
             ViewBag.AssignmentID = new SelectList(db.Assignments, "ID", "Name");
             return View();
         }
