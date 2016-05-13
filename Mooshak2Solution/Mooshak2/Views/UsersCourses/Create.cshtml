@@ -1,7 +1,7 @@
 ﻿@model Mooshak2.Models.Entities.UsersCourse
 
 @{
-    ViewBag.Title = "Tengja notendur og áfanga";
+    ViewBag.Title = "Connect user to course";
 }
 
 
@@ -9,8 +9,8 @@
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    <h2 class="connect-title">Tengja saman</h2>
-    <h2 class="connect-title-2">notanda og áfanga</h2>
+    <h2 class="connect-title">Connect</h2>
+    <h2 class="connect-title-2">user to course</h2>
     <div class="form-horizontal connect-box">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
