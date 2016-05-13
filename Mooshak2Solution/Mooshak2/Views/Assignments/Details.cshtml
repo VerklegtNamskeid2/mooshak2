@@ -7,7 +7,6 @@
 
 <div>
     <h4>Assignment</h4>
-    <hr />
 
         <div class="form-horizontal">
             <h4>Assignment: @ViewBag.model.Assignment.Title</h4>
@@ -31,8 +30,8 @@
                     }
                 </tbody>
             </table>
-            <a href="@ViewBag.createURL">Create milestone</a>
         </div>
+    <a class="btn btn-primary btn-lg" href="@ViewBag.createURL">Create milestone</a>
 </div>
 <p>
    @* @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
