@@ -189,7 +189,7 @@ namespace Mooshak2.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            ViewBag.model = _service.GetMilestoneByID((int)id);
+            ViewBag.milestone = _service.GetMilestoneByID((int)id);
             return View();
         }
 
@@ -250,11 +250,13 @@ namespace Mooshak2.Controllers
 
             // Check if the compile succeeded, and if it did,
             // we try to execute the code:
-            
+
+            int numCorrect = 0;
+            var InputOutputs = _service.GetMilestoneInputOutputs(1);
+            int numIOs = InputOutputs.Count;
 
             if (System.IO.File.Exists(exeFilePath))
             {
-                var InputOutputs = _service.GetMilestoneInputOutputs(1);
                 foreach (var io in InputOutputs)
                 {
                     var processInfoExe = new ProcessStartInfo(exeFilePath, "");
@@ -278,28 +280,34 @@ namespace Mooshak2.Controllers
                         // to above.
 
                         // We then read the output of the program:
-                        var accepted = false;
                         try {
                             string check = processExe.StandardOutput.ReadLine();
                             if (check.CompareTo(io.Output) == 0)
                             {
-                                accepted = true;
+                                numCorrect++;
                             }
                         }
-                        catch (Exception)
-                        {
-                            accepted = false;
-                        }
-                        Console.WriteLine("Prufa: " + accepted);               
-                        ViewBag.Output = accepted;
+                        catch (Exception) { }
                     }
-
                 }
             }
+            double correctNess = 1;
+            if (numIOs != 0)
+            {
+                correctNess = numCorrect / (double)numIOs;
+            }
 
+            var sol = new Solution
+            {
+                correctness = correctNess,
+                UserID = "32bb65dc-59de-49ef-8952-a57b5e64c48b",
+                MilestoneID = 1
+            };
+            _service.AddSolution(sol);
             // TODO: We might want to clean up after the process, there
             // may be files we should delete etc.
-
+            ViewBag.correct = correctNess;
+            ViewBag.submitted = true;
             return View();
         }
     }
