@@ -11,16 +11,29 @@
     </button>
 
     <hr />
+   <table class="table table-striped table-bordered">
+       <thead>
+           <tr>
+               <th>ID</th>
+               <th>Title</th>
+               <th>Actions</th>
+           </tr>
+       </thead>
+       <tbody>
+           @foreach (var x in ViewBag.model.Assignments)
+           {
+               <tr>
+                   <td>@x.ID</td>
+                   <td>@x.Title</td>
+                   <td>
+                       <a href="/Assignments/Details/@x.ID">Details</a>
+                       <a href="/Assignments/Edit/@x.ID">Edit</a>
+                   </td>
 
-
-
-
-   <ul>
-    @foreach (var x in ViewBag.model.Assignments)
-    {
-        <li><a href="/Assignments/Details/@x.ID">@x.Title</a></li>
-    }
-    </ul>
+               </tr>
+           }
+       </tbody>
+   </table>
 </div>
 <p>
 </p>

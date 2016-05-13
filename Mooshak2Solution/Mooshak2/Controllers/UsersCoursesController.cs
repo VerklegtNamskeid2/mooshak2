@@ -39,6 +39,10 @@ namespace Mooshak2.Controllers
         // GET: UsersCourses/Create
         public ActionResult Create()
         {
+            var users = db.Users.Select(row => row).ToList();
+            var courses = db.Courses.Select(row => row).ToList();
+            ViewBag.users = users;
+            ViewBag.courses = courses;
             return View();
         }
 

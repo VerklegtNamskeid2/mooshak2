@@ -16,7 +16,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.UserID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.UserID, new { htmlAttributes = new { @class = "form-control" } })
+                <select name="UserID" class="form-control">
+                    @foreach(var user in ViewBag.users)
+                    {
+                        <option value="@user.Id">@user.FullName</option>
+                    }
+                </select>
                 @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -24,7 +29,13 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CourseID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CourseID, new { htmlAttributes = new { @class = "form-control" } })
+                <select name="CourseID" class="form-control">
+                    @foreach (var course in ViewBag.courses)
+                    {
+                        <option value="@course.ID">@course.Title</option>
+                    }
+                </select>
+
                 @Html.ValidationMessageFor(model => model.CourseID, "", new { @class = "text-danger" })
             </div>
         </div>
