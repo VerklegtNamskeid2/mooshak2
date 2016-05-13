@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "Details";
+    ViewBag.createURL = "/Assignments/CreateMilestone/" + ViewBag.model.Assignment.ID;
 }
 
 <h2>Details</h2>
@@ -15,6 +16,7 @@
                 <thead>
                     <tr>
                         <th>Title</th>
+                        <th>Weight</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -23,17 +25,13 @@
                     {
                         <tr>
                             <td>@x.Title</td>
+                            <td>@x.weight</td>
                             <td><a href="/Assignments/MilestoneDetail/@x.ID">Skila</a></td>
                         </tr>
                     }
                 </tbody>
             </table>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Submit solution" class="btn btn-default" />
-                </div>
-            </div>
+            <a href="@ViewBag.createURL">Create milestone</a>
         </div>
 </div>
 <p>

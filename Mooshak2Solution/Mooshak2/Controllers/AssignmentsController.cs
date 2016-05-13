@@ -95,13 +95,13 @@ namespace Mooshak2.Controllers
         {
             _service.AddMilestone(model);
 
-            return View();
+            return RedirectToAction("Details", new RouteValueDictionary(new { controller = "Assignments", action = "Details", Id = model.Milestone.AssignmentID} ));
         }
 
         [HttpGet]
-        public ActionResult CreateMilestone()
+        public ActionResult CreateMilestone(int id)
         {
-            ViewBag.AssignmentID = new SelectList(db.Assignments, "ID", "Name");
+            ViewBag.assignmentID = id;
             return View();
         }
 
