@@ -1,5 +1,4 @@
-﻿@model IEnumerable<Mooshak2.Models.Entities.Assignment>
-
+﻿@model Mooshak2.Models.ViewModels.CoursesViewModel
 @{
     ViewBag.Title = "Index";
 }
@@ -9,10 +8,22 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+<li>@Html.ActionLink("Create Assignment", "Create", "Assignments")</li>
+<li>@Html.ActionLink("Create New User", "Register", "Account")</li>
+<li>@Html.ActionLink("Create New Course", "Create", "Courses")</li>
+<li>@Html.ActionLink("Connect Users To Course", "Create", "UsersCourses")</li>
+<li>@Html.ActionLink("Create Assignment", "Create", "Assignments")</li>
+<li>@Html.ActionLink("Create New User", "Register", "Account")</li>
+<li>@Html.ActionLink("Create New Course", "Create", "Courses")</li>
+<li>@Html.ActionLink("Connect Users To Course", "Create", "UsersCourses")</li>
+
+
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Course.Name)
+            @Html.DisplayNameFor(model => model.Course.Title)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Title)
@@ -23,7 +34,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Course.Name)
+            @Html.DisplayFor(modelItem => item.Course.Title)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Title)

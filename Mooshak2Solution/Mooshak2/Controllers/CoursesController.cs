@@ -29,6 +29,7 @@ namespace Mooshak2.Controllers
             return View(viewmodel);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Courses/Details/5
         public ActionResult Details(int? id)
         {

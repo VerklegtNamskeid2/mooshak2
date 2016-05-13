@@ -11,7 +11,11 @@ using Mooshak2.Models.Entities;
 using Mooshak2.Services;
 using Mooshak2.Models.ViewModels;
 using System.Diagnostics;
+using Microsoft.AspNet.Identity;
+
 using System.IO;
+using System.Web.UI.WebControls;
+using System.Web.Routing;
 
 namespace Mooshak2.Controllers
 {
@@ -19,6 +23,8 @@ namespace Mooshak2.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         private AssignmentsServices _service = new AssignmentsServices();
+        private CoursesServices _courseservice = new CoursesServices();
+
         // GET: Assignments
         public ActionResult Index()
         {
@@ -42,9 +48,21 @@ namespace Mooshak2.Controllers
         }
 
         // GET: Assignments/Create
+        [Authorize]
         public ActionResult Create()
         {
-            ViewBag.CourseID = new SelectList(db.Courses, "ID", "Name");
+            var viewmodel = _courseservice.GetUserCourses(User.Identity.GetUserId());
+            if (viewmodel.CoursesTeacher.Count == 0)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+
+            }
+            ViewBag.Courses = from row in viewmodel.CoursesTeacher
+                             select new SelectListItem
+                             {
+                                 Text = row.Title.ToString(),
+                                 Value = row.ID.ToString()
+                             };
             return View();
         }
 
@@ -53,13 +71,15 @@ namespace Mooshak2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         
         [HttpPost]
+        [Authorize]
         public ActionResult Create(AssignmentCreateViewModel model)
         {
 
+            model.Assignment.CourseID = model.CourseID;
             _service.Add(model);
 
-            //return RedirectToAction("CreateMilestoneTest");
-            return View();
+            return RedirectToAction("Details", new RouteValueDictionary(
+                new { controller = "Assignments", action = "Details", Id = model.Assignment.ID }));
         }
 
         /* [HttpGet]

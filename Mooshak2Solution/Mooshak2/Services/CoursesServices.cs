@@ -22,10 +22,10 @@ namespace Mooshak2.Services
        public CoursesViewModel GetUserCourses(string UserID)
        {
             var usersInCourse = _db.UsersCourses.Where(x => x.UserID == UserID).ToList();
-            var studentCourseIDs = usersInCourse.Where(x => x.RoleID == 1).Select(x => x.CourseID).ToList();
+            var studentCourseIDs = usersInCourse.Where(x => x.RoleID == 2).Select(x => x.CourseID).ToList();
             var studentCourses = _db.Courses.Where(x => studentCourseIDs.Contains(x.ID)).ToList();
 
-            var teacherCourseIDs = usersInCourse.Where(x => x.RoleID == 2).Select(x => x.CourseID).ToList();
+            var teacherCourseIDs = usersInCourse.Where(x => x.RoleID == 1).Select(x => x.CourseID).ToList();
             var teacherCourses = _db.Courses.Where(x => teacherCourseIDs.Contains(x.ID)).ToList();
 
             return new CoursesViewModel

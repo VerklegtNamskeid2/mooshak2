@@ -3,12 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Mooshak2.Models.ViewModels
 {
     public class AssignmentCreateViewModel
     {
         public virtual Assignment Assignment { get; set; }
+        public int CourseID { get; set; }
     }
 
     public class AssignmentsViewModels
