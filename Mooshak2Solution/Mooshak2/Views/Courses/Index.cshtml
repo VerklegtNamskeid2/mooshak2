@@ -7,46 +7,65 @@
 
 
 
-<h2>Courses</h2>
+<h3>Teacher in:</h3>
 
-<table class="table">
-    <tr>
-        <th>
-            Name
-        </th>
-        <th>
+<table class="table our-table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Assignments
+            </th>
 
-        </th>
-        
-    </tr>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.CoursesTeacher)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                    @Html.ActionLink("Details", "Details", new { id = item.ID })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
 
-@foreach (var item in Model.CoursesTeacher)
-{
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID})
-            @Html.ActionLink("Details", "Details", new { id=item.ID})
-        </td>
-    </tr>
-}
+<h3>Student in:</h3>
 
-@foreach (var item in Model.CoursesStudent)
-{
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ID })
-            @Html.ActionLink("Details", "Details", new { id = item.ID })
-        </td>
-    </tr>
-}
-
+<table class="table our-table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Assignments
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CoursesStudent)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                    @Html.ActionLink("Details", "Details", new { id = item.ID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 
 
 @*

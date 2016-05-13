@@ -3,12 +3,7 @@
     padding-bottom: 20px;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    background: rgb(98, 0, 234); /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left,rgba(98, 0, 234, 0.5),rgba(13, 71, 161,0.7)); /*Safari 5.1-6*/
-    background: -o-linear-gradient(right,rgba(98, 0, 234, 0.5),rgba(13, 71, 161,0.7)); /*Opera 11.1-12*/
-    background: -moz-linear-gradient(right,rgba(98, 0, 234, 0.5),rgba(13, 71, 161,0.7)); /*Fx 3.6-15*/
-    background: linear-gradient(to right, rgba(98, 0, 234, 0.5), rgba(13, 71, 161,0.7)); /*Standard*/
-    background-image: url('Img/moust.png');
+    /*background-image: url('Img/moust.png');*/
     height: 100vh;
 }
 
@@ -347,4 +342,13 @@ input[type=number] {
     background-color: rgba(102, 0, 102, 1);
     font-size: 22px;
 }
+
+
+
+/*                  COURSE TABLES                   */
+
+.our-table {
+    width: 50vw;
+}
+
 
