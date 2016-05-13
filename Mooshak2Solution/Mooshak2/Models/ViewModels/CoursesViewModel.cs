@@ -17,6 +17,8 @@ namespace Mooshak2.Models.ViewModels
         public List<Assignment> Assignments { get; set; }
         public string Title { get; internal set; }
         public virtual Course Course { get; set; }
+        public List<Course> CoursesTeacher { get; set; }
+        public List<Course> CoursesStudent { get; set; }
     }
         
     public class CourseAddUserViewModel

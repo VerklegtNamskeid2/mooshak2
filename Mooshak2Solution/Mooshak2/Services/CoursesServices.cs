@@ -19,11 +19,21 @@ namespace Mooshak2.Services
             _db = new ApplicationDbContext();
         }
 
-       // public List<CoursesViewModel> GetCourses(int courseID)
-        //{
-            //TODO:
-            //return null;
-        //}
+       public CoursesViewModel GetUserCourses(string UserID)
+       {
+            var usersInCourse = _db.UsersCourses.Where(x => x.UserID == UserID).ToList();
+            var studentCourseIDs = usersInCourse.Where(x => x.RoleID == 1).Select(x => x.CourseID).ToList();
+            var studentCourses = _db.Courses.Where(x => studentCourseIDs.Contains(x.ID)).ToList();
+
+            var teacherCourseIDs = usersInCourse.Where(x => x.RoleID == 2).Select(x => x.CourseID).ToList();
+            var teacherCourses = _db.Courses.Where(x => teacherCourseIDs.Contains(x.ID)).ToList();
+
+            return new CoursesViewModel
+            {
+                CoursesTeacher = teacherCourses,
+                CoursesStudent = studentCourses
+            };
+       }
         /* public AssignmentsViewModels GetAssignmentsByID(int assignmentsID)
          {
              var assignments = _db.Assignments.SingleOrDefault(x => x.ID == assignmentsID);

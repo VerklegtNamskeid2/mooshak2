@@ -196,6 +196,9 @@ namespace Mooshak2.Controllers
         [HttpPost]
         public ActionResult MilestoneDetail(MilestoneSubmitViewModels model)
         {
+            //
+            // var numberTried = 
+            //
             var workingFolder = "C:\\Temp\\Moostache\\";
             Random rand = new Random();
             var id = rand.Next(1000, 99999);

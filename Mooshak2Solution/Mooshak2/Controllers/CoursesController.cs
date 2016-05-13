@@ -21,9 +21,12 @@ namespace Mooshak2.Controllers
         private CoursesServices _service = new CoursesServices();
 
         // GET: Courses
+        [Authorize]
         public ActionResult Index()
         {
-            return View();
+            var userID = User.Identity.GetUserId();
+            var viewmodel = _service.GetUserCourses(userID);
+            return View(viewmodel);
         }
 
         // GET: Courses/Details/5
