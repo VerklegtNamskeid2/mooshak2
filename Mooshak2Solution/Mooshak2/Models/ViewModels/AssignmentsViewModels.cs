@@ -33,6 +33,7 @@ namespace Mooshak2.Models.ViewModels
 
     public class MilestoneSubmitViewModels
     {
+        public int MilestoneID { get; set; }
         public int something { get; set; }
     }
 }

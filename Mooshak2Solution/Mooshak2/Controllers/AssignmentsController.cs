@@ -317,14 +317,16 @@ namespace Mooshak2.Controllers
             var sol = new Solution
             {
                 correctness = correctNess,
-                UserID = "32bb65dc-59de-49ef-8952-a57b5e64c48b",
-                MilestoneID = 1
+                UserID = User.Identity.GetUserId(),
+                MilestoneID = model.MilestoneID
             };
             _service.AddSolution(sol);
             // TODO: We might want to clean up after the process, there
             // may be files we should delete etc.
             ViewBag.correct = correctNess;
             ViewBag.submitted = true;
+            var obj = _service.GetMilestoneByID(model.MilestoneID);
+            ViewBag.milestone = obj;
             return View();
         }
     }
