@@ -68,13 +68,13 @@ footer {
 input[type="text"] {
     border-radius: 0 !important;
     background-color: rgba(1, 82, 73, 0.1) !important;
-    color: #fbfbfb;
+    color: #333333;
 }
 
 input[type="password"] {
     border-radius: 0 !important;
     background-color: rgba(1, 82, 73, 0.1) !important;
-    color: #fbfbfb;
+    color: #333333;
 }
 
 .background-login {
@@ -87,13 +87,13 @@ input[type="password"] {
 }
 
 .control-label {
-    color: rgb(204, 204, 204);
+    color: #333333;
     font-size: 14px;
     border-radius: 0 !important;
 }
 
 .checkbox-remember {
-    color: rgb(204, 204, 204);
+    color: #333333;
 }
 
 .button-loginform {
@@ -130,7 +130,7 @@ input[type="password"] {
 
 textarea {
     background-color: transparent;
-    color: rgb(204, 204, 204);
+    color: #333333;
 }
 
 input[type=datetime] {
