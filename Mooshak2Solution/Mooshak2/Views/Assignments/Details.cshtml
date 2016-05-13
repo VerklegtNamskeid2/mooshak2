@@ -31,6 +31,27 @@
                 </tbody>
             </table>
         </div>
+    <hr />
+    <h3>Submit history</h3>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Score</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in ViewBag.solutions)
+            {
+                <tr>
+                    <td>@x.ID</td>
+                    <td>@x.MilestoneID</td>
+                    <td>@x.correctness</td>
+                </tr>
+            }
+        </tbody>
+    </table>
     <a class="btn btn-primary btn-lg" href="@ViewBag.createURL">Create milestone</a>
 </div>
 <p>

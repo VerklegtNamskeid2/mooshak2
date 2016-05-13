@@ -89,5 +89,13 @@ namespace Mooshak2.Services
         {
             return _db.InputOutput.Where(x => x.MilestoneID == id).ToList();
         }
+
+        public List<Solution> GetHistoryForAssignment(int assignmentsID, string userID)
+        {
+            var milestonesInAssignment = _db.Milestones.Where(x => x.AssignmentID == assignmentsID).ToList();
+            var milestoneIDs = milestonesInAssignment.Select(x => x.ID).ToList();
+            var solutions = _db.Solutions.Where(x => milestoneIDs.Contains(x.MilestoneID)).ToList();
+            return solutions;
+        }
     }
 }

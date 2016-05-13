@@ -46,6 +46,8 @@ namespace Mooshak2.Controllers
             var isTeacher = _courseservice.GetCourseByID(obj.Assignment.CourseID);
             ViewBag.model = obj;
             ViewBag.isTeacher = isTeacher;
+            var solutions = _service.GetHistoryForAssignment(obj.Assignment.ID, User.Identity.GetUserId());
+            ViewBag.solutions = solutions;
             return View();
         }
 
