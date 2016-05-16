@@ -20,6 +20,7 @@ namespace Mooshak2.Models.ViewModels
         public virtual Course Course { get; set; }
         public List<Course> CoursesTeacher { get; set; }
         public List<Course> CoursesStudent { get; set; }
+        public List<UsersCourse> UsersCourses { get; set; }
     }
         
     public class CourseAddUserViewModel
