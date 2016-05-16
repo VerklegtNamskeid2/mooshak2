@@ -23,7 +23,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @if (Request.IsAuthenticated)
+                    @if (User.IsInRole("Admin"))
                     {
                         <li>@Html.ActionLink("Create New Course", "Create", "Courses")</li>
                         <li>@Html.ActionLink("Connect Users To Course", "Create", "UsersCourses")</li>
